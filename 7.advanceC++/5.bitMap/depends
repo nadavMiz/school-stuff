@@ -1,0 +1,1 @@
+test.o: test.cpp mu_test.h bitMap.h bitOperations.h

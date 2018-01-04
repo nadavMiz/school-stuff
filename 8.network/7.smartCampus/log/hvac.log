@@ -1,0 +1,60 @@
+14::10::22 6: fire detected. turning off HVAC
+14::10::22 3: fire detected. turning off HVAC
+14::10::22 5: fire detected. turning off HVAC
+14::10::22 2: fire detected. turning off HVAC
+14::10::24 5: tmp is: 11. turning on HVAC
+14::10::24 2: tmp is: 11. turning on HVAC
+14::10::24 3: tmp is: 11. turning on HVAC
+14::10::24 6: tmp is: 11. turning on HVAC
+14::10::24 3: fire detected. turning off HVAC
+14::10::24 2: fire detected. turning off HVAC
+14::10::24 6: fire detected. turning off HVAC
+14::10::24 5: fire detected. turning off HVAC
+14::10::26 2: tmp is: 31. turning on HVAC
+14::10::26 6: tmp is: 31. turning on HVAC
+14::10::26 5: tmp is: 31. turning on HVAC
+14::10::26 3: tmp is: 31. turning on HVAC
+14::10::26 3: fire detected. turning off HVAC
+14::10::26 6: fire detected. turning off HVAC
+14::10::26 2: fire detected. turning off HVAC
+14::10::26 5: fire detected. turning off HVAC
+14::10::28 6: tmp is: 35. turning on HVAC
+14::10::28 5: tmp is: 35. turning on HVAC
+14::10::28 3: tmp is: 35. turning on HVAC
+14::10::28 2: tmp is: 35. turning on HVAC
+14::10::28 6: fire detected. turning off HVAC
+14::10::28 2: fire detected. turning off HVAC
+14::10::28 5: fire detected. turning off HVAC
+14::10::28 3: fire detected. turning off HVAC
+14::10::30 5: tmp is: -1. turning on HVAC
+14::10::30 6: tmp is: -1. turning on HVAC
+14::10::30 2: tmp is: -1. turning on HVAC
+14::10::30 3: tmp is: -1. turning on HVAC
+14::10::30 6: fire detected. turning off HVAC
+14::10::30 2: fire detected. turning off HVAC
+14::10::30 5: fire detected. turning off HVAC
+14::10::30 3: fire detected. turning off HVAC
+14::10::32 6: fire detected. turning off HVAC
+14::10::32 2: fire detected. turning off HVAC
+14::10::32 3: fire detected. turning off HVAC
+14::10::32 5: fire detected. turning off HVAC
+14::10::34 6: fire detected. turning off HVAC
+14::10::34 3: fire detected. turning off HVAC
+14::10::34 2: fire detected. turning off HVAC
+14::10::34 5: fire detected. turning off HVAC
+14::10::36 2: tmp is: 10. turning on HVAC
+14::10::36 5: tmp is: 10. turning on HVAC
+14::10::36 3: tmp is: 10. turning on HVAC
+14::10::36 6: tmp is: 10. turning on HVAC
+14::10::36 5: fire detected. turning off HVAC
+14::10::36 2: fire detected. turning off HVAC
+14::10::36 3: fire detected. turning off HVAC
+14::10::36 6: fire detected. turning off HVAC
+14::10::38 2: tmp is: 38. turning on HVAC
+14::10::38 3: tmp is: 38. turning on HVAC
+14::10::38 5: tmp is: 38. turning on HVAC
+14::10::38 6: tmp is: 38. turning on HVAC
+14::10::38 3: fire detected. turning off HVAC
+14::10::38 5: fire detected. turning off HVAC
+14::10::38 2: fire detected. turning off HVAC
+14::10::38 6: fire detected. turning off HVAC

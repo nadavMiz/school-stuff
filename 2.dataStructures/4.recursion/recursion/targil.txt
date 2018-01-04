@@ -1,0 +1,7 @@
+- binary search
+- string flip revese
+- hanoi tower(print every step)
+- find max
+- 8 queen
+
+-- send to yossi --

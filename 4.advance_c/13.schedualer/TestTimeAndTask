@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <time.h>
+
+#include "Task.h"
+#include "mu_test.h"
+
+/*user functions*/
+typedef struct
+{
+	size_t m_count;
+	size_t m_numIteration;
+} countStruct;
+
+int countFunc(countStruct* _count)
+{
+	++_count->m_count;
+	return (_count->m_count < _count->m_numIteration);
+}
+
+/*----------------------------time tests--------------------------------*/
+
+UNIT(timeInterval)
+	Time* myTime;
+	myTime = TimeCreate(65321);
+	ASSERT_THAT(65 == GetSeconds(myTime));
+	ASSERT_THAT(321000000 == getMiliSec(myTime));
+	TimeDestroy(myTime);
+END_UNIT
+
+UNIT(timeLessThan)
+	Time* a, *b, *c;
+	a = TimeCreate(65321);
+	b = TimeCreate(35666);
+	c = TimeCreate(65320);
+	ASSERT_THAT(TimeLessThan(b, a));
+	ASSERT_THAT(TimeLessThan(c, a));
+	TimeDestroy(a);
+	TimeDestroy(b);
+	TimeDestroy(c);
+END_UNIT
+
+UNIT(timeAdd)
+	Time *a, *b;
+	a = TimeCreate(4521);
+	b = TimeCreate(4521);
+	TimeAdd(a, b);
+	ASSERT_THAT(9 == GetSeconds(a));
+	ASSERT_THAT(42000000 == getMiliSec(a));
+END_UNIT
+
+UNIT(timeSleepUntil)
+	Time *currentTime, *interval;
+	
+	currentTime = TimeCreate(0);
+	TimeGetCurrent(0, currentTime);
+	
+	interval = TimeCreate(20);
+	TimeAdd(currentTime, interval);
+	
+	TimeSleepUntil(currentTime, 0);
+	
+	ASSERT_THAT(0 != 1);
+END_UNIT
+
+/*---------------------task tests--------------------------*/
+
+UNIT(taskCreate)
+	Task* newtask;
+	newtask = TaskCreate((TaskFunction)countFunc, (void*)5, 20, 0);
+	ASSERT_THAT(NULL != newtask);
+	TaskDestroy(newtask);
+END_UNIT
+
+UNIT(taskExcecute)
+	Task* newtask;
+	countStruct count = {0,3};
+	
+	newtask = TaskCreate((TaskFunction)countFunc, (void*)(&count), 20, 0);
+	ASSERT_THAT(1 == TaskExecute(newtask, 0));
+	TaskDestroy(newtask);
+END_UNIT
+
+TEST_SUITE(time and task test)
+	TEST(timeInterval)
+	TEST(timeLessThan)
+	TEST(timeAdd)
+	TEST(timeSleepUntil)
+	TEST(taskCreate)
+	TEST(taskExcecute)
+END_SUITE

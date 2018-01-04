@@ -1,0 +1,2 @@
+smartClient.o: smartClient.c smartClient.h doubleLinkedList.h list_itr.h
+smartClientMain.o: smartClientMain.c smartClient.h

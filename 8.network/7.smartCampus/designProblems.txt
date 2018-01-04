@@ -1,0 +1,9 @@
+
+
+1) to much intertwined connections between communication and other devices
+
+2) agent build his own messages instead only payload
+
+3) smartHouse part works with pthread and not nthread
+
+4) system to dependent on communicating with database instead of seperated parts

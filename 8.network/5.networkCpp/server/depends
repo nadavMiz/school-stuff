@@ -1,0 +1,15 @@
+server.o: server.cpp server.h serverSocket.h ../commSocket.h ../socket.h \
+ ../socket_t.h serversClient.h ../timeValue.h listenSocket.h ../socket.h \
+ ../selectSet.h ../timeValue.h ../netExceptions.h
+listenSocket.o: listenSocket.cpp listenSocket.h ../socket.h ../socket_t.h \
+ serverSocket.h ../commSocket.h ../socket.h
+serversClient.o: serversClient.cpp serversClient.h ../commSocket.h \
+ ../socket.h ../socket_t.h ../timeValue.h serverSocket.h \
+ ../netExceptions.h
+test.o: test.cpp server.h serverSocket.h ../commSocket.h ../socket.h \
+ ../socket_t.h serversClient.h ../timeValue.h listenSocket.h ../socket.h \
+ ../selectSet.h ../timeValue.h
+commSocket.o: ../commSocket.cpp ../commSocket.h ../socket.h ../socket_t.h \
+ ../netExceptions.h
+selectSet.o: ../selectSet.cpp ../socket_t.h ../selectSet.h ../timeValue.h \
+ ../socket.h

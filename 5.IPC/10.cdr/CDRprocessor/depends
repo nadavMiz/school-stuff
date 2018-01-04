@@ -1,0 +1,24 @@
+retriver.o: retriver.c ../inc/retriver.h ../inc/HashMap.h \
+ ../inc/HashMap.h
+subscriber.o: subscriber.c ../inc/subscriber.h ../inc/CDRparser.h \
+ ../inc/zlog4c.h ../inc/config.h ../inc/communication.h ../inc/queue.h \
+ ../inc/ADTErr.h ../inc/CDRparser.h ../inc/operator.h
+operator.o: operator.c ../inc/operator.h ../inc/CDRparser.h \
+ ../inc/zlog4c.h ../inc/config.h ../inc/communication.h ../inc/queue.h \
+ ../inc/ADTErr.h ../inc/CDRparser.h
+CGF.o: CGF.c ../inc/CGF.h ../inc/retriver.h ../inc/HashMap.h \
+ ../inc/subscriber.h ../inc/CDRparser.h ../inc/zlog4c.h ../inc/config.h \
+ ../inc/communication.h ../inc/queue.h ../inc/ADTErr.h ../inc/operator.h \
+ ../inc/controller.h
+communication.o: communication.c ../inc/communication.h
+CDRthreads.o: CDRthreads.c ../inc/Recievers.h ../inc/retriver.h \
+ ../inc/HashMap.h ../inc/operator.h ../inc/CDRparser.h ../inc/zlog4c.h \
+ ../inc/config.h ../inc/communication.h ../inc/queue.h ../inc/ADTErr.h \
+ ../inc/subscriber.h ../inc/communication.h ../inc/CDRparser.h \
+ ../inc/zlog4c.h ../inc/CGF.h ../inc/retriver.h ../inc/controller.h
+processorConfigParser.o: processorConfigParser.c \
+ ../inc/processorConfigParser.h
+ProcessorMain.o: ProcessorMain.c ../inc/Recievers.h \
+ ../inc/processorConfigParser.h ../inc/CDRparser.h ../inc/zlog4c.h \
+ ../inc/config.h ../inc/communication.h ../inc/queue.h ../inc/ADTErr.h \
+ ../inc/communication.h ../inc/CGF.h ../inc/retriver.h ../inc/HashMap.h

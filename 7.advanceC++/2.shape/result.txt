@@ -1,0 +1,173 @@
+---------------Start----------------
+Shape::Shape() - 1
+Circle::Circle() - 1, r:1.000000
+Shape::Shape() - 2
+Rectangle::Rectangle(int) - 2, [4, 4]
+0.-------------------------------
+Shape::Shape(Shape&) - 3 from - 1
+Circle::Circle(Circle&) - 3, r:1.000000
+-----draw(Circle)-----
+Shape::Shape() - 4
+Circle::Circle(double) - 4, r:1.000000
+Circle::draw()  - 4, r:1.000000
+Circle::scale(3.000000)
+Circle::draw()  - 3, r:1.000000
+-----draw(Circle)-----
+Circle::~Circle() - 3, r:1.000000
+Shape::draw() - 3
+Shape::~Shape - 3
++..............
+Shape::Shape(Shape&) - 4 from - 1
+Circle::Circle(Circle&) - 4, r:1.000000
+-----draw(Circle)-----
+Circle::draw()  - 4, r:3.000000
+Circle::scale(3.000000)
+Circle::draw()  - 4, r:1.000000
+-----draw(Circle)-----
+Circle::~Circle() - 4, r:1.000000
+Shape::draw() - 4
+Shape::~Shape - 4
++..............
+-----draw(Shape&)-----
+Rectangle::scale(1.000000)
+Rectangle::draw()  - 2, [4, 4]
+-----draw(Shape&)-----
++..............
+-----report-----
+Circle::draw()  - 1, r:1.000000
+Shape::printInventory - 3
+-----report-----
+1.-------------------------------
+-----doPointerArray-----
+Shape::Shape() - 4
+Circle::Circle() - 4, r:1.000000
+Shape::Shape() - 5
+Rectangle::Rectangle(int) - 5, [3, 3]
+Shape::Shape() - 6
+Circle::Circle(double) - 6, r:4.000000
+Circle::scale(1.000000)
+Circle::draw()  - 4, r:1.000000
+Rectangle::scale(1.000000)
+Rectangle::draw()  - 5, [3, 3]
+Circle::scale(1.000000)
+Circle::draw()  - 6, r:4.000000
+Circle::scale(2.000000)
+area: 150.792000
+Circle::~Circle() - 4, r:1.000000
+Shape::draw() - 4
+Shape::~Shape - 4
+Rectangle::~Rectangle() - 5, [3, 3]
+Shape::draw() - 5
+Shape::~Shape - 5
+Circle::~Circle() - 6, r:8.000000
+Shape::draw() - 6
+Shape::~Shape - 6
+-----doPointerArray-----
+2.-------------------------------
+Shape::Shape() - 4
+Circle::Circle() - 4, r:1.000000
+Shape::Shape(Shape&) - 5 from - 4
+Circle::~Circle() - 4, r:1.000000
+Shape::draw() - 4
+Shape::~Shape - 4
+Shape::Shape() - 5
+Rectangle::Rectangle(int) - 5, [4, 4]
+Shape::Shape(Shape&) - 6 from - 5
+Rectangle::~Rectangle() - 5, [4, 4]
+Shape::draw() - 5
+Shape::~Shape - 5
+Shape::Shape() - 6
+Circle::Circle(double) - 6, r:9.000000
+Shape::Shape(Shape&) - 7 from - 6
+Circle::~Circle() - 6, r:9.000000
+Shape::draw() - 6
+Shape::~Shape - 6
+Shape::draw() - 5
+Shape::draw() - 6
+Shape::draw() - 7
+Shape::draw() - 7
+Shape::~Shape - 7
+Shape::draw() - 6
+Shape::~Shape - 6
+Shape::draw() - 5
+Shape::~Shape - 5
+3.-------------------------------
+Shape::printInventory - 3
+Shape::Shape(Shape&) - 4 from - 1
+Circle::Circle(Circle&) - 4, r:1.000000
+Shape::printInventory - 4
+4.-------------------------------
+Shape::Shape() - 5
+Circle::Circle() - 5, r:1.000000
+Shape::Shape() - 6
+Circle::Circle() - 6, r:1.000000
+Shape::Shape() - 7
+Circle::Circle() - 7, r:1.000000
+Shape::Shape() - 8
+Circle::Circle() - 8, r:1.000000
+Shape::Shape() - 9
+Circle::Circle() - 9, r:1.000000
+Circle::scale(2.000000)
+olympic diff 9.424500
+5.-------------------------------
+Shape::Shape() - 10
+Rectangle::Rectangle() - 10, [1, 1]
+Shape::Shape() - 11
+Rectangle::Rectangle() - 11, [1, 1]
+Shape::Shape() - 12
+Rectangle::Rectangle() - 12, [1, 1]
+Shape::Shape() - 13
+Rectangle::Rectangle() - 13, [1, 1]
+Rectangle::~Rectangle() - 13, [1, 1]
+Shape::draw() - 13
+Shape::~Shape - 13
+Rectangle::~Rectangle() - 12, [1, 1]
+Shape::draw() - 12
+Shape::~Shape - 12
+Rectangle::~Rectangle() - 11, [1, 1]
+Shape::draw() - 11
+Shape::~Shape - 11
+Rectangle::~Rectangle() - 10, [1, 1]
+Shape::draw() - 10
+Shape::~Shape - 10
+6.-------------------------------
+Empty::Empty(1)
+Empty::Empty(2)
+Empty::Empty(0)
+EmptyEmpty::EmptyEmpty(2)
+EmptyBag::EmptyBag()
+Empty things are: 1 4 87.-------------------------------
+-----disappear-----
+-----disappear-----
+---------------END----------------
+EmptyBag::~EmptyBag
+Empty::~Empty()
+Empty::~Empty()
+Empty::~Empty()
+Circle::~Circle() - 9, r:1.000000
+Shape::draw() - 9
+Shape::~Shape - 9
+Circle::~Circle() - 8, r:1.000000
+Shape::draw() - 8
+Shape::~Shape - 8
+Circle::~Circle() - 7, r:1.000000
+Shape::draw() - 7
+Shape::~Shape - 7
+Circle::~Circle() - 6, r:2.000000
+Shape::draw() - 6
+Shape::~Shape - 6
+Circle::~Circle() - 5, r:1.000000
+Shape::draw() - 5
+Shape::~Shape - 5
+Circle::~Circle() - 4, r:1.000000
+Shape::draw() - 4
+Shape::~Shape - 4
+Rectangle::~Rectangle() - 2, [4, 4]
+Shape::draw() - 2
+Shape::~Shape - 2
+Circle::~Circle() - 1, r:1.000000
+Shape::draw() - 1
+Shape::~Shape - 1
+Circle::~Circle() - 4, r:9.000000
+Shape::draw() - 4
+Shape::~Shape - 4

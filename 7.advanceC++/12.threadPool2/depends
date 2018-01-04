@@ -1,0 +1,10 @@
+threadPool.o: threadPool.cpp threadPool.h nPrioretyQueue.h guard.h \
+ Nmutex.h ncond.h taskManager.h task.h threadable.h nthread.h taskImp.h \
+ voidTask.h
+Nmutex.o: Nmutex.cpp Nmutex.h
+guard.o: guard.cpp guard.h Nmutex.h
+taskManager.o: taskManager.cpp guard.h Nmutex.h taskManager.h task.h \
+ threadable.h nPrioretyQueue.h ncond.h nthread.h voidTask.h
+test.o: test.cpp threadPool.h nPrioretyQueue.h guard.h Nmutex.h ncond.h \
+ taskManager.h task.h threadable.h nthread.h taskImp.h mu_test.h
+ncond.o: ncond.cpp ncond.h Nmutex.h

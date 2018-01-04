@@ -1,0 +1,2 @@
+serverMain.o: serverMain.c server.h
+server.o: server.c server.h doubleLinkedList.h list_itr.h

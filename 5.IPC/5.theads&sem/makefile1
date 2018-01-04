@@ -1,0 +1,36 @@
+# Global definitions
+CC=gcc
+CFLAGS = -g -Wconversion -Wall -ansi -pedantic -std=gnu99
+LDFLAGS = -g
+# Directory structure
+INC_DIR = ../../inc
+CFLAGS += -I$(INC_DIR)
+LIB_DIR = ../../lib
+
+# all contents of current directory
+SRCS=$(wildcard *.c)
+OBJS=$(SRCS:.c=.o)
+# Target and sources
+TARGET = threads.out
+LIB_SRCS=consumer.c producer.c queue.c threadsMain.c
+LIB_OBJS=$(LIB_SRCS:.c=.o)item
+
+# Dependencies
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) -pthread
+
+include depends
+
+depends: consumer.h queue.h producer.h
+	$(CC) -MM -I$(INC_DIR) $(OBJS:.o=.c) > depends
+
+
+clean:
+	-rm *.o
+	-rm threads.out
+
+run:
+	./threads.out
+

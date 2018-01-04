@@ -1,0 +1,50 @@
+#ifndef __SHMP_PROTOCOL_H__
+#define __SHMP_PROTOCOL_H__
+
+#include <string>
+#include <sstream>
+#include <map>
+
+#include "protocol.h"
+
+namespace smartCampus
+{
+
+class ShmpProtocol: public Protocol
+{
+public:
+	// ShmpProtocol(); default CTOR
+	virtual ~ShmpProtocol();
+	virtual ProtocolMsgPtr ParseMessage(char* _data, std::size_t _length);
+	virtual std::string CreateMsg(const ProtocolMsg& _msg);
+	virtual std::string GetResponse(const std::string& _type);
+
+private:
+	void ValidateProtocol(std::stringstream& _msgStream) const;
+	void GetTopic(std::stringstream& _data, ProtocolMsgPtr _msgStream) const;
+	void GetValues(std::stringstream& _data, ProtocolMsgPtr _msgStream) const;
+
+private:
+	static const std::string m_messageBegin;
+	static const std::string m_messageEnd;
+	static std::map<std::string, std::string> m_responseMap;
+	
+private:
+	struct InsertValueToStream
+	{
+		InsertValueToStream(std::stringstream& _stream): m_stream(_stream){}
+		void operator()(const std::string& _str);
+		
+		std::stringstream& m_stream;
+	};
+
+};
+
+inline void ShmpProtocol::InsertValueToStream::operator()(const std::string& _str) 
+{
+	m_stream << " " << _str;
+}
+
+}
+#endif /* __SHMP_PROTOCOL_H__ */
+

@@ -1,0 +1,20 @@
+
+top / htop = general performence
+
+mpstat = cpu cores statistics
+
+perf = performence monitoring
+
+pmap = process memory map
+
+iostat = system io monitor
+
+strace = system calls monitor
+
+netstat = network map
+
+tcpdump = network traffic monitoring
+
+gdb supports python. can enter commends batch from file -x and such
+
+brendon gregg performence guy

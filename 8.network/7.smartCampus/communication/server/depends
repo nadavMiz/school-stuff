@@ -1,0 +1,21 @@
+dispatcherImp.o: dispatcherImp.cpp dispatcherImp.h iDispatcher.h \
+ serverEnums.h ihandler.h socket.h socket_t.h netExceptions.h ireactor.h
+clientSocket.o: clientSocket.cpp clientSocket.h commSocket.h socket.h \
+ socket_t.h
+server.o: server.cpp server.h ihandler.h serverEnums.h socket.h \
+ socket_t.h ireactor.h iDispatcher.h listenSocket.h serverSocket.h \
+ commSocket.h masterSocketHandler.h reactorImp.h selectSet.h timeValue.h \
+ timeValueOperations.h ../../inc/uncopyable.h dispatcherImp.h
+atomicOperations.o: atomicOperations.cpp atomicOperations.h
+commSocket.o: commSocket.cpp commSocket.h socket.h socket_t.h \
+ netExceptions.h
+selectSet.o: selectSet.cpp selectSet.h timeValue.h timeValueOperations.h \
+ socket.h socket_t.h serverEnums.h ../../inc/uncopyable.h
+listenSocket.o: listenSocket.cpp listenSocket.h socket.h socket_t.h \
+ serverSocket.h commSocket.h
+reactorImp.o: reactorImp.cpp reactorImp.h ireactor.h socket.h socket_t.h \
+ ihandler.h serverEnums.h selectSet.h timeValue.h timeValueOperations.h \
+ ../../inc/uncopyable.h iDispatcher.h
+nasterSocketHandler.o: nasterSocketHandler.cpp masterSocketHandler.h \
+ ihandler.h serverEnums.h socket.h socket_t.h ireactor.h listenSocket.h \
+ serverSocket.h commSocket.h

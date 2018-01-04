@@ -1,0 +1,49 @@
+defaultEventFactory.o: defaultEventFactory.cpp defaultEventFactory.h \
+ ieventFactory.h ../inc/uncopyable.h ../inc/event.h protocolMsg.h \
+ ../inc/defaultEvent.h ../inc/eventImp.h ../inc/payload.h
+intEventFactory.o: intEventFactory.cpp intEventFactory.h ieventFactory.h \
+ ../inc/uncopyable.h ../inc/event.h protocolMsg.h ../inc/intEvent.h \
+ ../inc/eventImp.h ../inc/payload.h
+shmpProtocol.o: shmpProtocol.cpp shmpProtocol.h protocol.h protocolMsg.h
+eventCommHandler.o: eventCommHandler.cpp eventCommHandler.h \
+ server/ihandler.h server/serverEnums.h server/socket.h server/socket_t.h \
+ ieventFactory.h ../inc/uncopyable.h ../inc/event.h protocolMsg.h \
+ ../inc/hub.h protocol.h server/commSocket.h
+communicator.o: communicator.cpp communicator.h protocol.h protocolMsg.h \
+ ../inc/nthread.h ../inc/atomicOperations.h server/server.h \
+ server/ihandler.h server/serverEnums.h server/socket.h server/socket_t.h \
+ server/ireactor.h server/iDispatcher.h ../inc/hub.h eventCommHandler.h \
+ server/ihandler.h ieventFactory.h ../inc/uncopyable.h ../inc/event.h \
+ server/listenSocket.h server/serverSocket.h server/commSocket.h \
+ intEventFactory.h ../inc/intEvent.h ../inc/eventImp.h ../inc/payload.h \
+ shmpProtocol.h
+event.o: event.cpp ../inc/event.h ../inc/eventImp.h ../inc/payload.h
+selectSet.o: server/selectSet.cpp server/selectSet.h server/timeValue.h \
+ server/timeValueOperations.h server/socket.h server/socket_t.h \
+ server/serverEnums.h ../inc/uncopyable.h
+reactorImp.o: server/reactorImp.cpp server/reactorImp.h server/ireactor.h \
+ server/socket.h server/socket_t.h server/ihandler.h server/serverEnums.h \
+ server/selectSet.h server/timeValue.h server/timeValueOperations.h \
+ ../inc/uncopyable.h server/iDispatcher.h
+nasterSocketHandler.o: server/nasterSocketHandler.cpp \
+ server/masterSocketHandler.h server/ihandler.h server/serverEnums.h \
+ server/socket.h server/socket_t.h server/ireactor.h \
+ server/listenSocket.h server/serverSocket.h server/commSocket.h
+clientSocket.o: server/clientSocket.cpp server/clientSocket.h \
+ server/commSocket.h server/socket.h server/socket_t.h
+dispatcherImp.o: server/dispatcherImp.cpp server/dispatcherImp.h \
+ server/iDispatcher.h server/serverEnums.h server/ihandler.h \
+ server/socket.h server/socket_t.h server/netExceptions.h \
+ server/ireactor.h
+server.o: server/server.cpp server/server.h server/ihandler.h \
+ server/serverEnums.h server/socket.h server/socket_t.h server/ireactor.h \
+ server/iDispatcher.h server/listenSocket.h server/serverSocket.h \
+ server/commSocket.h server/masterSocketHandler.h server/reactorImp.h \
+ server/selectSet.h server/timeValue.h server/timeValueOperations.h \
+ ../inc/uncopyable.h server/dispatcherImp.h
+commSocket.o: server/commSocket.cpp server/commSocket.h server/socket.h \
+ server/socket_t.h server/netExceptions.h
+atomicOperations.o: server/atomicOperations.cpp server/atomicOperations.h
+listenSocket.o: server/listenSocket.cpp server/listenSocket.h \
+ server/socket.h server/socket_t.h server/serverSocket.h \
+ server/commSocket.h

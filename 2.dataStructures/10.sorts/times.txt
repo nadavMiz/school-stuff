@@ -1,0 +1,159 @@
+-------best case times-----------
+1000 elements
+PASSED bubble sort sorted
+time: 0.000059
+PASSED shake sort sorted
+time: 0.000061
+PASSED quick sort best case
+time: 0.000387
+PASSED quick sort recursive best case
+time: 0.000327
+PASSED Insertion sort sorted
+time: 0.000067
+PASSED shell sort sorted
+time: 0.000426
+
+10000 elements
+PASSED bubble sort sorted
+time: 0.000592
+PASSED shake sort sorted
+time: 0.000591
+PASSED quick sort best case
+time: 0.004801
+PASSED quick sort recursive best case
+time: 0.002618
+PASSED Insertion sort sorted
+time: 0.000500
+PASSED shell sort sorted
+time: 0.003770
+
+50000 elements
+PASSED bubble sort sorted
+time: 0.001636
+PASSED shake sort sorted
+time: 0.001638
+PASSED quick sort best case
+time: 0.014906
+PASSED quick sort recursive best case
+time: 0.011193
+PASSED Insertion sort sorted
+time: 0.001831
+PASSED shell sort sorted
+time: 0.020438
+
+10000 elements times
+-------typical case times--------
+1000 elements 
+PASSED bubble sort
+time: 0.015255
+PASSED shake sort
+time: 0.012003
+PASSED quick sort
+time: 0.000306
+PASSED Insertion sort
+time: 0.009221
+PASSED quick sort recursive
+time: 0.000258
+PASSED shell sort
+time: 0.000479
+PASSED selection sort
+time: 0.004709
+PASSED merge sort
+time: 0.000348
+PASSED merge recursive sort
+time: 0.000358
+PASSED count sort
+time: 0.000089
+PASSED radix sort
+time: 0.000396
+
+10000 elements 
+PASSED bubble sort
+time: 1.525380
+PASSED shake sort
+time: 1.167120
+PASSED quick sort
+time: 0.003811
+PASSED quick sort recursive
+time: 0.003250
+PASSED Insertion sort
+time: 0.921128
+PASSED shell sort
+time: 0.006937
+PASSED selection sort
+time: 0.460277
+PASSED merge sort
+time: 0.004514
+PASSED merge recursive sort
+time: 0.004343
+PASSED count sort
+time: 0.000571
+PASSED radix sort
+time: 0.003454
+
+50000 elements 
+PASSED bubble sort
+time: 37.934947
+PASSED shake sort
+time: 29.891967
+PASSED quick sort
+time: 0.021203
+PASSED quick sort recursive
+time: 0.018504
+PASSED Insertion sort
+time: 22.935506
+PASSED shell sort
+time: 0.036234
+PASSED selection sort
+time: 11.530928
+PASSED merge sort
+time: 0.025539
+PASSED merge recursive sort
+time: 0.025505
+PASSED count sort
+time: 0.002642
+PASSED radix sort
+time: 0.017378
+
+-------worst case times--------
+1000 elements 
+PASSED bubble sort worst case
+time: 0.017196
+PASSED shake sort worst case
+time: 0.016886
+PASSED quick sort worst
+time: 0.004658
+PASSED quick sort recursive worst case
+time: 0.004640
+PASSED Insertion sort worst
+time: 0.018173
+PASSED shell sort worst
+time: 0.000413
+
+10000 elements 
+PASSED bubble sort worst case
+time: 1.708629
+PASSED shake sort worst case
+time: 1.697893
+PASSED quick sort worst
+time: 0.451129
+PASSED quick sort recursive worst case
+time: 0.452422
+PASSED Insertion sort worst
+time: 1.826069
+PASSED shell sort worst
+time: 0.006122
+
+50000 elements 
+PASSED bubble sort worst case
+time: 42.935011
+PASSED shake sort worst case
+time: 42.589829
+PASSED Insertion sort worst
+time: 45.612705
+PASSED quick sort worst
+time: 11.222969
+PASSED quick sort recursive worst case
+time: 11.233232
+PASSED shell sort worst
+time: 0.037366

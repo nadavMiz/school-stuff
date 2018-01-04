@@ -1,0 +1,109 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\froman\fprq0\fcharset128 MS Gothic;}{\f5\froman\fprq0\fcharset128 Times New Roman;}{\f6\fswiss\fprq0\fcharset128 Arial;}{\f7\fnil\fprq0\fcharset128 OpenSymbol{\*\falt Arial Unicode MS};}{\f8\froman\fprq0\fcharset128 Liberation Serif{\*\falt Times New Roman};}{\f9\fnil\fprq0\fcharset128 Times New Roman;}{\f10\fnil\fprq0\fcharset128 Lohit Hindi;}{\f11\fnil\fprq0\fcharset128 Times New Roman Tur;}{\f12\fswiss\fprq0\fcharset128 WenQuanYi Micro Hei;}{\f13\fnil\fprq0\fcharset128 MS Gothic;}{\f14\fnil\fprq0\fcharset128 WenQuanYi Micro Hei;}}
+{\colortbl;\red0\green0\blue0;\red255\green255\blue255;\red128\green128\blue128;}
+{\stylesheet{\s0\snext0\ql\nowidctlpar\ltrpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf1\kerning1\dbch\af10\langfe2052\dbch\af14\afs24\alang1081\loch\f5\fs24\lang1033 Normal;}
+{\*\cs15\snext15\dbch\af7\dbch\af7\loch\f7 Bullets;}
+{\*\cs16\snext16\loch\f8 ListLabel 1;}
+{\s17\sbasedon0\snext18\ql\nowidctlpar\sb240\sa120\keepn\ltrpar\cf1\kerning1\dbch\af10\langfe2052\dbch\af14\afs28\alang1081\loch\f6\fs28\lang1033 Heading;}
+{\s18\sbasedon0\snext18\sl288\slmult1\qj\nowidctlpar\faauto\li0\ri0\lin0\rin0\fi-360\sb120\sa0\cbpat2\ltrpar\cf1\kerning1\dbch\af9\langfe1033\dbch\af14\afs22\alang1037\loch\f5\fs22\lang1033 Text Body;}
+{\s19\sbasedon18\snext19\sl288\slmult1\qj\nowidctlpar\faauto\li0\ri0\lin0\rin0\fi-360\sb120\sa0\cbpat2\ltrpar\cf1\kerning1\dbch\af10\langfe1033\dbch\af12\afs22\alang1037\loch\f5\fs22\lang1033 List;}
+{\s20\sbasedon0\snext20\ql\nowidctlpar\sb120\sa120\noline\ltrpar\cf1\i\kerning1\dbch\af10\langfe2052\dbch\af12\afs24\alang1081\ai\loch\f5\fs24\lang1033 Caption;}
+{\s21\sbasedon0\snext21\ql\nowidctlpar\noline\ltrpar\cf1\kerning1\dbch\af10\langfe2052\dbch\af12\afs24\alang1081\loch\f5\fs24\lang1033 Index;}
+{\s22\snext22\ql\nowidctlpar\faauto\li0\ri0\lin0\rin0\fi0\sb0\sa120\cbpat2\ltrpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf1\b\kerning1\dbch\af9\langfe1033\dbch\af14\afs32\alang1037\ab\loch\f5\fs32\lang1033 Heading #1;}
+{\s23\snext23\qj\nowidctlpar\faauto\li0\ri0\lin0\rin0\fi0\sb120\sa420\cbpat2\ltrpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf1\kerning1\dbch\af11\langfe1033\dbch\af13\afs15\alang1037\loch\f4\fs15\lang1033 Body text (2);}
+{\s24\sbasedon0\snext24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033 Preformatted Text;}
+}{\*\listtable{\list\listtemplateid1
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f15\fi-360\li720}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f15\fi-360\li1080}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f15\fi-360\li1440}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f15\fi-360\li1800}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f15\fi-360\li2160}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f15\fi-360\li2520}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f15\fi-360\li2880}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f15\fi-360\li3240}
+{\listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f15\fi-360\li3600}\listid1}
+{\list\listtemplateid2
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-432\li432}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-576\li576}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-720\li720}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-864\li864}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-1008\li1008}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-1152\li1152}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-1296\li1296}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-1440\li1440}
+{\listlevel\levelnfc255\leveljc0\levelstartat1\levelfollow2{\leveltext \'00;}{\levelnumbers;}\fi-1584\li1584}\listid2}
+}{\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}{\info{\title UNIT-I}{\author GUMMADI}{\creatim\yr2012\mo10\dy29\hr7\min6}{\revtim\yr2012\mo10\dy29\hr7\min13}{\printim\yr0\mo0\dy0\hr0\min0}{\comment LibreOffice}{\vern67241986}}\deftab720\deftab720\deftab720
+\viewscale120
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn11906\pghsxn16838\marglsxn1538\margrsxn1514\margtsxn1984\margbsxn1984\pgdscnxt0 Default Style;}}
+\formshade{\*\pgdscno0}\paperh16838\paperw11906\margl1538\margr1514\margt1984\margb1984\sectd\sbknone\sectunlocked1\pgndec\pgwsxn11906\pghsxn16838\marglsxn1538\margrsxn1514\margtsxn1984\margbsxn1984\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+\pgndec\pard\plain \s22\ql\nowidctlpar\faauto\li0\ri0\lin0\rin0\fi0\sb0\sa120\cbpat2\ltrpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf1\b\kerning1\dbch\af9\langfe1033\dbch\af14\afs32\alang1037\ab\loch\f5\fs32\lang1033\sl-320\slmult0\keep\li3600\ri0\lin3600\rin0\fi0\sb0\sa10\cbpat2\keepn{\*\bkmkstart Bookmark}{\*\bkmkstart bookmark011}{\*\bkmkstart bookmark0}{\*\bkmkstart bookmark01}{\*\bkmkend Bookmark}{\*\bkmkend bookmark011}{\*\bkmkend bookmark0}{\*\bkmkend bookmark01}{\*\bkmkstart Bookmark}{\*\bkmkstart bookmark011}{\*\bkmkstart bookmark0}{\*\bkmkstart bookmark01}{\*\bkmkend Bookmark}{\*\bkmkend bookmark011}{\*\bkmkend bookmark0}{\*\bkmkend bookmark01}\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\qc\sb0\sa0{\cf1\b\dbch\af9\dbch\af9\afs28\alang1025\ab\rtlch \ltrch\fs28
+\uc2 \u8220\'81\'67\uc1 }{\cf1\b\dbch\af9\dbch\af9\afs28\alang1025\ab\rtlch \ltrch\loch\fs28
+Daily Appointment Diary\uc2 \u8221\'81\'68\uc1 }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Build a working \uc2 \u8220\'81\'67Appointment Diary\u8221\'81\'68  ( AD ) generation program. \uc1 }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+AD \u8211\'3f managers pointers to Meetings.}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\b\dbch\af9\dbch\af9\alang1025\ab\rtlch \ltrch\loch
+The main requirements:}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+1. Each meeting contains begin / end hours and }{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+room number}{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+ of the meeting.}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch
+    }{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+begin / end hours \u8211\'3f }{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+are}{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+ float numbers }{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+,  room number }{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+\u8211\'3f }{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+integer}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+2. A day can contain any number of meetings \u8211\'3f means that DAY is a dynamic  array of pointers to meetings}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+3. Meetings can\uc2 \u8217\'81\'66t overlap ( intersect )\uc1 }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch
+ }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\b\dbch\af9\dbch\af9\alang1025\ab\rtlch \ltrch\loch
+Also provide the following functionality:}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+\tab }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Create AD }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Create meeting}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Insert appointment into AD \u8211\'3f insertion in sorted order ( by begin hour )}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Remove appointment from AD ( by begin hour 0}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Find appointment in AD (by begin hour)}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Destroy AD}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033{\listtext\pard\plain \loch\f8 \u8226\'95\tab}\ilvl0\ls1 \li1440\ri0\lin1440\rin0\fi-360\li720\ri0\lin720\rin0\fi-360\sb0\sa0{\cf1\dbch\af9\dbch\af9\alang1025\rtlch \ltrch\loch
+Print AD}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\b\dbch\af9\dbch\af9\alang1025\ab\rtlch \ltrch\loch
+Test program has to be interactive ( infinite loop ).}
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0\cf1\b\ab\rtlch \ltrch\loch
+
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sb0\sa0{\cf1\b\dbch\af9\dbch\af9\alang1025\ab\rtlch \ltrch\loch
+Pay attention, that both Meeting_t and Calendar_t are structures. }
+\par \pard\plain \s24\ql\nowidctlpar\sb0\sa0\ltrpar\cf1\kerning1\dbch\af9\langfe2052\dbch\af9\afs20\alang1081\loch\f5\fs20\lang1033\sl-274\slmult0\qj\tx359\faauto\sb0\sa0\rtlch \ltrch\loch
+
+\par }

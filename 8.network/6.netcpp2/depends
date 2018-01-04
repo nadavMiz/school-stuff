@@ -1,0 +1,4 @@
+commSocket.o: commSocket.cpp commSocket.h socket.h socket_t.h \
+ netExceptions.h
+selectSet.o: selectSet.cpp socket_t.h selectSet.h timeValue.h socket.h \
+ serverEnums.h

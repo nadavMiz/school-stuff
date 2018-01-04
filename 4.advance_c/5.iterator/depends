@@ -1,0 +1,4 @@
+ListIteratorFuncs.o: ListIteratorFuncs.c ../../inc/doubleLinkedList.h \
+ ../../inc/list_itr.h ../../inc/ListIteratorFuncs.h
+doubleLinkedList.o: doubleLinkedList.c ../../inc/doubleLinkedList.h \
+ ../../inc/list_itr.h

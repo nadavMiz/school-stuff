@@ -1,0 +1,23 @@
+dispatcherImp.o: dispatcherImp.cpp dispatcherImp.h iDispatcher.h \
+ ../serverEnums.h ihandler.h ../socket.h ../socket_t.h ../netExceptions.h \
+ ireactor.h
+clientSocket.o: clientSocket.cpp clientSocket.h ../commSocket.h \
+ ../socket.h ../socket_t.h
+server.o: server.cpp server.h ihandler.h ../serverEnums.h ../socket.h \
+ ../socket_t.h ireactor.h iDispatcher.h ../timeValue.h listenSocket.h \
+ serverSocket.h ../commSocket.h ../socket.h masterSocketHandler.h \
+ reactorImp.h ../selectSet.h ../timeValue.h ../serverEnums.h \
+ dispatcherImp.h
+test1.o: test1.cpp server.h ihandler.h ../serverEnums.h ../socket.h \
+ ../socket_t.h ireactor.h iDispatcher.h ../timeValue.h serverSocket.h \
+ ../commSocket.h ../socket.h clientSocket.h nthread.h atomicOperations.h \
+ mu_test.h
+atomicOperations.o: atomicOperations.cpp atomicOperations.h
+listenSocket.o: listenSocket.cpp listenSocket.h ../socket.h ../socket_t.h \
+ serverSocket.h ../commSocket.h ../socket.h
+reactorImp.o: reactorImp.cpp reactorImp.h ireactor.h ../socket.h \
+ ../socket_t.h ihandler.h ../serverEnums.h ../selectSet.h ../timeValue.h \
+ ../socket.h ../serverEnums.h iDispatcher.h
+nasterSocketHandler.o: nasterSocketHandler.cpp masterSocketHandler.h \
+ ihandler.h ../serverEnums.h ../socket.h ../socket_t.h ireactor.h \
+ listenSocket.h serverSocket.h ../commSocket.h ../socket.h
