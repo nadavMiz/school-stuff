@@ -18,6 +18,8 @@ COMMOBJ = $(wildcard ../communication/*.o)
 OBJS += $(patsubst %.o,%.o,$(COMMOBJ))
 SERVEROBJ = $(wildcard ../communication/server/*.o)
 OBJS += $(patsubst %.o,%.o,$(SERVEROBJ))
+ALLOBJ = $(wildcard ../inc/*.o)
+OBJS += $(patsubst %.o,%.o,$(ALLOBJ))
 # Target and sources
 TARGET = smartHouse.out
 #LIB_SRCS = ../communication/comm.c

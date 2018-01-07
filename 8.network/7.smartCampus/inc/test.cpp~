@@ -1,0 +1,45 @@
+#include <iostream>
+#include <algorithm>
+
+#include "vectorSearchTable.h"
+#include "query.h"
+
+void printVal(int _val)
+{
+	std::cout << _val;
+}
+
+using namespace smartCampus;
+
+int main()
+{
+	Query query;
+	query.m_topic = "fire";
+	query.m_floor = "5";
+	
+	VectorSearchTable<int> table;
+	table.Insert(query, 5);
+	table.Insert(query, 3);
+	
+	Query all;
+	all.m_topic = "fire";
+	std::vector<int> results = table.Find(all);
+	
+	query.m_floor = "NONE";
+	query.m_room = "5";
+	table.Insert(query, 7);
+	
+	results = table.Find(query);
+	std::for_each(results.begin(), results.end(), printVal);
+	std::cout << std::endl;
+	
+	query.m_room = "3";
+	std::cout << table.IsPresent(query) << std::endl;
+	
+	table.Remove(all);
+	results = table.Find(all);
+	std::for_each(results.begin(), results.end(), printVal);
+	std::cout << std::endl;
+
+	return 1;
+}
