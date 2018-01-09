@@ -19,11 +19,12 @@ class Server
 {
 
 public:
-	Server(int _port, IHandlerPtr _handler, std::size_t _backlogSize = 32);
+	Server();
 	//~Server(); default DTOR
 	void AddSocket(SocketPtr _socket, IHandlerPtr _handler);
 	void RemoveSocket(SocketPtr _socket);
 	void ServerRoutine();
+	void ShutDown();
 
 private:
 	/* data */
@@ -36,9 +37,9 @@ inline void Server::AddSocket(SocketPtr _socket, IHandlerPtr _handler)
 	m_reactor->AddSocket(_socket, _handler);
 }
 
-inline Server::RemoveSocket(SocketPtr _socket)
+inline void Server::RemoveSocket(SocketPtr _socket)
 {
-	m_reactor.RemoveSocket(_socket);
+	m_reactor->RemoveSocket(_socket);
 }
 
 }

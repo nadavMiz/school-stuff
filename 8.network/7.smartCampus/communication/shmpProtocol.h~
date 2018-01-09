@@ -17,7 +17,7 @@ public:
 	virtual ~ShmpProtocol();
 	virtual ProtocolMsg ParseMessage(char* _data, std::size_t _length);
 	virtual std::string CreateMsg(const ProtocolMsg& _msg);
-	virtual std::string GetResponse(const std::string& _type);
+	virtual std::string GetResponse(const std::string& _type) const;
 
 private:
 	void ValidateProtocol(std::stringstream& _msgStream) const;

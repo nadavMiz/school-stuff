@@ -17,7 +17,7 @@ public:
 	virtual ~Protocol() = 0;
 	virtual ProtocolMsg ParseMessage(char* _data, std::size_t _length) = 0;
 	virtual std::string CreateMsg(const ProtocolMsg& _msg) = 0;
-	virtual std::string GetResponse(const std::string& _type) = 0;
+	virtual std::string GetResponse(const std::string& _type) const = 0;
 
 };
 

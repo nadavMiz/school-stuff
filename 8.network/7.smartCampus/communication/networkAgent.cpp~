@@ -1,8 +1,11 @@
+#include <sstream>
+
 #include "networkAgent.h"
 #include "nlogFactory.h"
 #include "agentData.h"
 #include "vectorSearchTable.h"
 #include "query.h"
+#include "hub.h"
 #include "eventImp.h"
 
 namespace smartCampus
@@ -28,14 +31,24 @@ NetworkAgent::NetworkAgentData::NetworkAgentData()
 NetworkAgent::NetworkAgent(ClientSocketPtr _socket, Hub* _hub):
 	Agent(GetAgentData(), _hub)
 ,	m_socket(_socket)
-,	m_topics(new VectorSearchTable<int>){}
+,	m_topics(new VectorSearchTable<int>)
+{
+	m_hub->Subscribe(this);
+}
+
+NetworkAgent::~NetworkAgent()
+{
+	m_hub->Unsubscribe(this);
+}
 
 Query NetworkAgent::ParseEvent(const Event& _event) const
 {
 	Query query;
 	query.m_topic = _event->m_type;
 	query.m_room = _event->m_room;
-	query.m_floor = _event->m_floor;
+	std::ostringstream stm;
+	stm << _event->m_floor;
+	query.m_floor = stm.str();
 	query.m_section = _event->m_section;
 	
 	return query;
@@ -44,6 +57,8 @@ Query NetworkAgent::ParseEvent(const Event& _event) const
 bool NetworkAgent::IsRelevantEvent(const Event& _event) const
 {
 	Query query = ParseEvent(_event);
+	
+	int result = m_topics->IsPresent(query);
 	
 	return m_topics->IsPresent(query);
 }

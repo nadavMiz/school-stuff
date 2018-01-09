@@ -22,7 +22,7 @@ class NetworkAgent: public Agent
 {
 public:
 	NetworkAgent(ClientSocketPtr _socket, Hub* _hub);
-	//virtual ~NetworkAgent();
+	virtual ~NetworkAgent();
 	
 	virtual bool IsRelevantEvent(const Event& _event) const;
 	virtual void ReciveEvent(const Event& _event);

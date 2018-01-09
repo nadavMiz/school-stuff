@@ -17,28 +17,36 @@ typedef std::tr1::shared_ptr<Protocol> ProtocolPtr;
 class ProtocolCommSocket: public netcpp::Socket
 {
 public:
+	ProtocolCommSocket(const char* _ip, int _port, ProtocolPtr _protocol);
 	ProtocolCommSocket(CommSocketPtr _socket, ProtocolPtr _protocol);
 	//virtual ~ProtocolCommSocket();
 	
 	void Disconnect();
 	void Send(const ProtocolMsg& _msg, netcpp::CommSocket::MsgFlag _flags = netcpp::CommSocket::e_noFlag);
 	ProtocolMsg Recv(netcpp::CommSocket::MsgFlag _flags = netcpp::CommSocket::e_noFlag);
+	void SendResponse(const std::string& _type, netcpp::CommSocket::MsgFlag _flag = netcpp::CommSocket::e_noFlag);
+	
 	int GetId() const;
+	
+	//socket_t GetNativeHandler();
+
+protected:
+	//socket_t m_socket;
 
 private:
 	/* data */
-	CommSocketPtr m_socket;
+	CommSocketPtr m_commSocket;
 	ProtocolPtr m_protocol;
 };
 
 inline void ProtocolCommSocket::Disconnect()
 {
-	m_socket->Disconnect();
+	m_commSocket->Disconnect();
 }
 
 inline int ProtocolCommSocket::GetId() const
 {
-	return m_socket->GetId();
+	return m_commSocket->GetId();
 }
 
 }

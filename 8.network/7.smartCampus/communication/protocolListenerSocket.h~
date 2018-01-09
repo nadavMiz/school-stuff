@@ -25,20 +25,23 @@ public:
 	void CloseSocket();
 	//socket_t GetNativeHandler();
 
+protected:
+	//socket_t m_socket;
+
 private:
 	/* data */
-	netcpp::ListenSocket m_socket;
+	netcpp::ListenSocket m_listenSocket;
 	ProtocolPtr m_protocol;
 };
 
 inline void PrototcolListenerSocket::SetNoBlock()
 {
-	m_socket.SetNoBlock();
+	m_listenSocket.SetNoBlock();
 }
 
 inline void PrototcolListenerSocket::CloseSocket()
 {
-	m_socket.CloseSocket();
+	m_listenSocket.CloseSocket();
 }
 
 }

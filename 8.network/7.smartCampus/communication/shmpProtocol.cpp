@@ -1,9 +1,11 @@
 #include <stdexcept> //runtime_error
 #include <string>
 #include <sstream>
+#include <iostream>
 #include <algorithm> // std::for_each
 
 #include "shmpProtocol.h"
+#include "netExceptions.h" //netcpp::BadRequest_error
 
 namespace smartCampus
 {
@@ -14,7 +16,7 @@ const std::string ShmpProtocol::m_messageEnd = "\0";
 static const std::pair<std::string,std::string> responses[] = 
 {
 	std::pair<std::string, std::string>("ok", "SHMP: status 200 OK")
-,	std::pair<std::string, std::string>("bad request", "SHMP: status 400 Bad Request")
+,	std::pair<std::string, std::string>("badRequest", "SHMP: status 400 Bad Request")
 ,	std::pair<std::string, std::string>("error", "SHMP: status 500 Internal Server Error")
 };
 std::map<std::string, std::string> ShmpProtocol::m_responseMap(responses, responses + sizeof(responses) / sizeof(responses[0]));
@@ -28,7 +30,7 @@ void ShmpProtocol::ValidateProtocol(std::stringstream& _msgStream) const
 	_msgStream >> identifier;
 	if(identifier != m_messageBegin)
 	{
-		throw std::runtime_error("ShmpProtocol::GetValues: wrong protocol type");
+		throw netcpp::BadRequest_error("ShmpProtocol::GetValues: wrong protocol type");
 	}
 }
 
@@ -36,7 +38,7 @@ void ShmpProtocol::GetTopic(std::stringstream& _msgStream, ProtocolMsg& _msg) co
 {
 	if(_msgStream.eof())
 	{
-		throw std::runtime_error("ShmpProtocol::GetValues: missing header");
+		throw netcpp::BadRequest_error("ShmpProtocol::GetValues: missing header");
 	}
 	_msgStream >> _msg.m_topic;
 }
@@ -53,7 +55,7 @@ void ShmpProtocol::GetValues(std::stringstream& _msgStream, ProtocolMsg& _msg) c
 
 ProtocolMsg ShmpProtocol::ParseMessage(char* _data, std::size_t _length)
 {
-	std::stringstream msgStream(_data);
+	std::stringstream msgStream(std::string(_data, _length - 1));
 	ValidateProtocol(msgStream);
 	
 	ProtocolMsg result;
@@ -80,7 +82,7 @@ std::string ShmpProtocol::CreateMsg(const ProtocolMsg& _msg)
 	return result.str();
 }
 
-std::string ShmpProtocol::GetResponse(const std::string& _type)
+std::string ShmpProtocol::GetResponse(const std::string& _type) const
 {
 	std::map<std::string, std::string>::iterator responseItr = m_responseMap.find(_type);
 	if(m_responseMap.end() == responseItr)
