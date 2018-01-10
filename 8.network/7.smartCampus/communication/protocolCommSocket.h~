@@ -24,6 +24,7 @@ public:
 	void Disconnect();
 	void Send(const ProtocolMsg& _msg, netcpp::CommSocket::MsgFlag _flags = netcpp::CommSocket::e_noFlag);
 	ProtocolMsg Recv(netcpp::CommSocket::MsgFlag _flags = netcpp::CommSocket::e_noFlag);
+	const std::string& RecvResponse(netcpp::CommSocket::MsgFlag _flags = netcpp::CommSocket::e_noFlag);
 	void SendResponse(const std::string& _type, netcpp::CommSocket::MsgFlag _flag = netcpp::CommSocket::e_noFlag);
 	
 	int GetId() const;

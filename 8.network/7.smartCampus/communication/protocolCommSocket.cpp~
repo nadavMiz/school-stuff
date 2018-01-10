@@ -34,6 +34,14 @@ ProtocolMsg ProtocolCommSocket::Recv(netcpp::CommSocket::MsgFlag _flags)
 	return m_protocol->ParseMessage(data, count);
 }
 
+const std::string& ProtocolCommSocket::RecvResponse(netcpp::CommSocket::MsgFlag _flags)
+{
+	char data[MAX_MSG_SIZE];
+	std::size_t count = m_commSocket->Recv(data, MAX_MSG_SIZE, _flags);
+	
+	return m_protocol->ParseResponse(data, count);
+}
+
 void ProtocolCommSocket::SendResponse(const std::string& _type, netcpp::CommSocket::MsgFlag _flag)
 {
 	std::string response = m_protocol->GetResponse(_type);

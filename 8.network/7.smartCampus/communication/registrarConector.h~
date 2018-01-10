@@ -14,7 +14,7 @@ public:
 	//RegistrarConnector();
 	virtual ~RegistrarConnector() = 0;
 
-	virtual SectionData GetSectionData(const string& _data) = 0;
+	virtual SectionData GetSectionData(const std::string& _data) = 0;
 };
 
 

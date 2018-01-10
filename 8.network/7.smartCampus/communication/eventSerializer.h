@@ -20,19 +20,7 @@ public:
 	
 private:
 	void SerializeHeader(const Event& _event, ProtocolMsg& _msg) const;
-	
-	template<class T>
-	std::string GetPair(const std::string& _key, const T& _value) const;
 };
-
-template <class T>
-std::string EventSerializer::GetPair(const std::string& _key, const T& _value) const
-{
-	stringstream result;
-	
-	result << _key << EventImp::m_keyValueDelim << _value;
-	return result.str();
-}
 
 }
 #endif /* __EVENT_SERIALIZER_H__ */

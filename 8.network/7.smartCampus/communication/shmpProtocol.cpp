@@ -1,8 +1,8 @@
 #include <stdexcept> //runtime_error
 #include <string>
 #include <sstream>
-#include <iostream>
-#include <algorithm> // std::for_each
+#include <algorithm> // std::for_each std::find_if
+#include <tr1/functional> //tr1::bind
 
 #include "shmpProtocol.h"
 #include "netExceptions.h" //netcpp::BadRequest_error
@@ -34,6 +34,25 @@ void ShmpProtocol::ValidateProtocol(std::stringstream& _msgStream) const
 	}
 }
 
+bool ShmpProtocol::EqaulSecond(const std::pair<std::string, std::string>& _pair, const std::string& _toCompare)
+{
+	return _pair.second == _toCompare;
+}
+
+const std::string& ShmpProtocol::ParseResponse(char* _data, std::size_t _length) const
+{
+	using namespace std::tr1::placeholders;
+	
+	std::map<std::string, std::string>::iterator itr = std::find_if(m_responseMap.begin(), m_responseMap.end(), std::tr1::bind(EqaulSecond, _1, std::string(_data)));
+	
+	if(itr == m_responseMap.end())
+	{
+		throw std::runtime_error("invalid response");
+	}
+	
+	return itr->first;
+}
+
 void ShmpProtocol::GetTopic(std::stringstream& _msgStream, ProtocolMsg& _msg) const
 {
 	if(_msgStream.eof())
@@ -53,7 +72,7 @@ void ShmpProtocol::GetValues(std::stringstream& _msgStream, ProtocolMsg& _msg) c
 	}
 }
 
-ProtocolMsg ShmpProtocol::ParseMessage(char* _data, std::size_t _length)
+ProtocolMsg ShmpProtocol::ParseMessage(char* _data, std::size_t _length) const
 {
 	std::stringstream msgStream(std::string(_data, _length - 1));
 	ValidateProtocol(msgStream);
@@ -66,7 +85,7 @@ ProtocolMsg ShmpProtocol::ParseMessage(char* _data, std::size_t _length)
 	return result;
 }
 
-std::string ShmpProtocol::CreateMsg(const ProtocolMsg& _msg)
+std::string ShmpProtocol::CreateMsg(const ProtocolMsg& _msg) const
 {
 	std::stringstream result;
 	
@@ -82,7 +101,7 @@ std::string ShmpProtocol::CreateMsg(const ProtocolMsg& _msg)
 	return result.str();
 }
 
-std::string ShmpProtocol::GetResponse(const std::string& _type) const
+const std::string& ShmpProtocol::GetResponse(const std::string& _type) const
 {
 	std::map<std::string, std::string>::iterator responseItr = m_responseMap.find(_type);
 	if(m_responseMap.end() == responseItr)

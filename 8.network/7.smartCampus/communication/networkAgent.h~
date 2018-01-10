@@ -16,7 +16,7 @@ namespace smartCampus
 {
 
 typedef std::tr1::shared_ptr<ProtocolCommSocket> ClientSocketPtr;
-typedef std::tr1::shared_ptr<ISearchTable<int> > ISearchTablePtr;
+typedef std::tr1::shared_ptr<ISearchTable> ISearchTablePtr;
 
 class NetworkAgent: public Agent
 {
@@ -57,7 +57,7 @@ inline const AgentData& NetworkAgent::NetworkAgentData::GetData() const
 
 inline void NetworkAgent::AddRegistration(const Query& _query)
 {
-	m_topics->Insert(_query, 0);
+	m_topics->Insert(_query);
 }
 
 inline void NetworkAgent::RemoveRegistration(const Query& _query)

@@ -9,23 +9,21 @@
 namespace smartCampus
 {
 
-template <class T>
 class ISearchTable: private Uncopyable
 {
 
 public:
 	//SearchTable(); default CTOR
 	virtual ~ISearchTable() = 0;
-	virtual void Insert(const Query& _query, const T& _value) = 0;
-	virtual void Remove(const T& _value) = 0;
-	virtual void Remove(const Query& _query) = 0;
+	virtual void Insert(const Query& _query) = 0;
+	virtual std::size_t Remove(const Query& _query) = 0;
+	virtual bool ExactRemove(const Query& _query) = 0;
 	virtual void Clear() = 0;
-	virtual std::vector<T>& Find(const Query& _query) const = 0;
 	virtual bool IsPresent(const Query& _query) const = 0;
+	virtual bool IsEmpty() const = 0;
 };
 
-template <class T>
-inline ISearchTable<T>::~ISearchTable(){}
+inline ISearchTable::~ISearchTable(){}
 
 
 }

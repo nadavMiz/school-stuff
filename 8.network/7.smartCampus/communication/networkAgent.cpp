@@ -31,7 +31,7 @@ NetworkAgent::NetworkAgentData::NetworkAgentData()
 NetworkAgent::NetworkAgent(ClientSocketPtr _socket, Hub* _hub):
 	Agent(GetAgentData(), _hub)
 ,	m_socket(_socket)
-,	m_topics(new VectorSearchTable<int>)
+,	m_topics(new VectorSearchTable)
 {
 	m_hub->Subscribe(this);
 }
