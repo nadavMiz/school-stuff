@@ -25,7 +25,7 @@ ListenSocket::~ListenSocket()
 {
 	if(!m_isClosed)
 	{
-		CloseSocket();
+		close(m_socket);
 	}
 }
 
@@ -33,7 +33,10 @@ void ListenSocket::CloseSocket()
 {
 	if(!m_isClosed)
 	{
-		close(m_socket);
+		if(close(m_socket) < 0)
+		{
+			throw std::runtime_error(strerror(errno));
+		}
 	}
 }
 

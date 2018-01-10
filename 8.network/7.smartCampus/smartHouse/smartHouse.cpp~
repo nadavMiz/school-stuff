@@ -6,11 +6,10 @@
 SmartHouse::SmartHouse(const std::string& _dataBase, const std::string& _soPath, const std::string& _logPath): 
 	m_path(_dataBase)
 ,	m_soPath(_soPath)
+,	m_initializer(new Initializer(_logPath))
 ,	m_hub(new MyHub)
 ,	m_communicator(m_hub.get())
-{
-	m_initializer = new Initializer(_logPath);
-}
+{}
 
 SmartHouse::~SmartHouse()
 {	
@@ -18,7 +17,6 @@ SmartHouse::~SmartHouse()
 	{
 		delete *itr;
 	}
-	delete m_initializer;
 }
 
 void SmartHouse::Run()

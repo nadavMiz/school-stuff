@@ -5,7 +5,6 @@
 #include <vector>
 #include <map> // std::pair
 #include <string>
-#include <iostream>
 #include <cstring>
 
 #include "isearchTable.h"
@@ -55,7 +54,6 @@ private:
 template <class T>
 inline bool VectorSearchTable<T>::CompareQueries(const Query& _first, const Query& _second)
 {
-	std::cout << _first.m_floor << " " << _second.m_floor << std::endl;
 	return (_first.m_topic == _second.m_topic && CompareQuerieValues(_first.m_room, _second.m_room) && CompareQuerieValues(_first.m_floor, _second.m_floor));
 }
 

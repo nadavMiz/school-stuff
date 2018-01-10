@@ -23,15 +23,16 @@ void* threadfunc(void* _dummy)
 	
 	newSocket.Recv(response, MSG_LENGTH);
 	std::cout << response << std::endl;
-	std::cout << "phase 1" << std::endl;
 
 	/*get events*/
 	
-	for(int i = 0; i < 20; ++i)
+	for(int i = 0; i < 6; ++i)
 	{
 		socket->Recv(response, MSG_LENGTH);
 		std::cout << response << std::endl;
 	}
+	socket->Disconnect();
+	listener.CloseSocket();
 	return 0;
 }
 
@@ -45,8 +46,8 @@ int main()
 	pthread_create(&thread, NULL, threadfunc, NULL);
 	
 	sleep(1);
-	netcpp::ClientSocket newSocket("127.0.0.1", 2001);
-	for(int i = 0; i < 10; ++i)
+	netcpp::ClientSocket newSocket("127.0.0.1", 2004);
+	for(int i = 0; i < 3; ++i)
 	{
 		sleep(1);
 		newSocket.Send(onmsg, strlen(onmsg) + 1);
@@ -58,6 +59,8 @@ int main()
 		newSocket.Recv(response, MSG_LENGTH);
 		//std::cout << response << std::endl;
 	}
-	
 	pthread_join(thread, NULL);
+	newSocket.Disconnect();
+	
+	return 1;
 }

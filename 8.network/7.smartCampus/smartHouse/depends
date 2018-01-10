@@ -18,12 +18,8 @@ smartHouse.o: smartHouse.cpp inc/smartHouse.h ../inc/agent.h \
  ../communication/server/serverEnums.h ../communication/server/socket.h \
  ../communication/server/socket_t.h ../communication/server/ireactor.h \
  ../communication/server/iDispatcher.h ../inc/hub.h \
- ../communication/networkAgent.h ../communication/protocolCommSocket.h \
- ../communication/server/socket.h ../communication/server/commSocket.h \
- ../inc/agentData.h ../inc/nlog.h ../communication/isearchTable.h \
- ../inc/uncopyable.h ../communication/query.h \
- ../communication/eventSerializer.h ../inc/event.h ../inc/eventImp.h \
- ../inc/payload.h inc/initializer.h ../inc/sqlController.h inc/myHub.h \
+ ../communication/registrarConector.h ../communication/sectionData.h \
+ inc/initializer.h ../inc/sqlController.h inc/myHub.h \
  inc/protectedQueue.h inc/guard.h
 main.o: main.cpp inc/smartHouse.h ../inc/agent.h ../inc/event.h \
  inc/nlogFactory.h ../communication/communicator.h \
@@ -33,12 +29,7 @@ main.o: main.cpp inc/smartHouse.h ../inc/agent.h ../inc/event.h \
  ../communication/server/serverEnums.h ../communication/server/socket.h \
  ../communication/server/socket_t.h ../communication/server/ireactor.h \
  ../communication/server/iDispatcher.h ../inc/hub.h \
- ../communication/networkAgent.h ../communication/protocolCommSocket.h \
- ../communication/server/socket.h ../communication/server/commSocket.h \
- ../inc/agentData.h ../inc/nlog.h ../communication/isearchTable.h \
- ../inc/uncopyable.h ../communication/query.h \
- ../communication/eventSerializer.h ../inc/event.h ../inc/eventImp.h \
- ../inc/payload.h
+ ../communication/registrarConector.h ../communication/sectionData.h
 myHub.o: myHub.cpp ../inc/agent.h ../inc/event.h inc/myHub.h ../inc/hub.h \
  inc/protectedQueue.h inc/guard.h ../inc/event.h ../inc/eventImp.h \
  ../inc/payload.h inc/eventListener.h
@@ -47,26 +38,6 @@ parsingFunctions.o: ../communication/parsingFunctions.cpp \
 shmpProtocol.o: ../communication/shmpProtocol.cpp \
  ../communication/shmpProtocol.h ../communication/protocol.h \
  ../communication/protocolMsg.h ../communication/server/netExceptions.h
-registrationListenerHandler.o: \
- ../communication/registrationListenerHandler.cpp \
- ../communication/registrationListenerHandler.h \
- ../communication/server/ihandler.h ../communication/server/serverEnums.h \
- ../communication/server/socket.h ../communication/server/socket_t.h \
- ../communication/server/server.h ../communication/server/ihandler.h \
- ../communication/server/ireactor.h ../communication/server/iDispatcher.h \
- ../communication/registrationHandler.h ../inc/hub.h \
- ../communication/networkAgent.h ../inc/agent.h ../inc/event.h \
- ../communication/protocolCommSocket.h ../communication/server/socket.h \
- ../communication/server/commSocket.h ../communication/protocol.h \
- ../communication/protocolMsg.h ../inc/agentData.h ../inc/nlog.h \
- ../communication/isearchTable.h ../inc/uncopyable.h \
- ../communication/query.h ../communication/eventSerializer.h \
- ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
- ../communication/registrarConector.h ../communication/sectionData.h \
- ../communication/protocolListenerSocket.h \
- ../communication/server/listenSocket.h \
- ../communication/server/serverSocket.h \
- ../communication/server/commSocket.h
 registrationHandler.o: ../communication/registrationHandler.cpp \
  ../communication/registrationHandler.h ../inc/hub.h \
  ../communication/server/ihandler.h ../communication/server/serverEnums.h \
@@ -88,21 +59,24 @@ communicator.o: ../communication/communicator.cpp \
  ../communication/server/ihandler.h ../communication/server/serverEnums.h \
  ../communication/server/socket.h ../communication/server/socket_t.h \
  ../communication/server/ireactor.h ../communication/server/iDispatcher.h \
- ../inc/hub.h ../communication/networkAgent.h ../inc/agent.h \
- ../inc/event.h ../communication/protocolCommSocket.h \
- ../communication/server/socket.h ../communication/server/commSocket.h \
- ../inc/agentData.h ../inc/nlog.h ../communication/isearchTable.h \
- ../inc/uncopyable.h ../communication/query.h \
- ../communication/eventSerializer.h ../inc/event.h ../inc/eventImp.h \
- ../inc/payload.h ../communication/eventCommHandler.h \
+ ../inc/hub.h ../communication/registrarConector.h \
+ ../communication/sectionData.h ../communication/eventCommHandler.h \
  ../communication/server/ihandler.h \
  ../communication/eventFactoryDispatcher.h \
- ../communication/ieventFactory.h \
+ ../communication/ieventFactory.h ../inc/uncopyable.h ../inc/event.h \
  ../communication/protocolListenerSocket.h \
- ../communication/server/listenSocket.h \
+ ../communication/server/socket.h ../communication/server/listenSocket.h \
  ../communication/server/serverSocket.h \
- ../communication/server/commSocket.h ../communication/intEventFactory.h \
- ../inc/intEvent.h ../inc/eventImp.h ../communication/shmpProtocol.h
+ ../communication/server/commSocket.h \
+ ../communication/protocolCommSocket.h \
+ ../communication/server/commSocket.h ../communication/shmpProtocol.h \
+ ../communication/dbRegistrarConnector.h ../inc/sqlController.h \
+ ../communication/registrationHandler.h ../communication/networkAgent.h \
+ ../inc/agent.h ../inc/event.h ../inc/agentData.h ../inc/nlog.h \
+ ../communication/isearchTable.h ../communication/query.h \
+ ../communication/eventSerializer.h ../inc/eventImp.h ../inc/payload.h \
+ ../communication/registrationListenerHandler.h \
+ ../communication/eventListenerHandler.h
 protocolListenerSocket.o: ../communication/protocolListenerSocket.cpp \
  ../communication/protocolListenerSocket.h \
  ../communication/server/socket.h ../communication/server/socket_t.h \
@@ -150,6 +124,26 @@ intEventFactory.o: ../communication/intEventFactory.cpp \
  ../communication/intEventFactory.h ../communication/ieventFactory.h \
  ../inc/uncopyable.h ../inc/event.h ../communication/protocolMsg.h \
  ../inc/intEvent.h ../inc/eventImp.h ../inc/payload.h
+registrationListenerHandler.o: \
+ ../communication/registrationListenerHandler.cpp \
+ ../communication/registrationListenerHandler.h \
+ ../communication/server/ihandler.h ../communication/server/serverEnums.h \
+ ../communication/server/socket.h ../communication/server/socket_t.h \
+ ../communication/server/server.h ../communication/server/ihandler.h \
+ ../communication/server/ireactor.h ../communication/server/iDispatcher.h \
+ ../communication/registrationHandler.h ../inc/hub.h \
+ ../communication/networkAgent.h ../inc/agent.h ../inc/event.h \
+ ../communication/protocolCommSocket.h ../communication/server/socket.h \
+ ../communication/server/commSocket.h ../communication/protocol.h \
+ ../communication/protocolMsg.h ../inc/agentData.h ../inc/nlog.h \
+ ../communication/isearchTable.h ../inc/uncopyable.h \
+ ../communication/query.h ../communication/eventSerializer.h \
+ ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
+ ../communication/registrarConector.h ../communication/sectionData.h \
+ ../communication/protocolListenerSocket.h \
+ ../communication/server/listenSocket.h \
+ ../communication/server/serverSocket.h \
+ ../communication/server/commSocket.h
 protocolCommSocket.o: ../communication/protocolCommSocket.cpp \
  ../communication/protocolCommSocket.h ../communication/server/socket.h \
  ../communication/server/socket_t.h ../communication/server/commSocket.h \
@@ -159,6 +153,21 @@ protocolCommSocket.o: ../communication/protocolCommSocket.cpp \
 eventSerializer.o: ../communication/eventSerializer.cpp \
  ../communication/eventSerializer.h ../inc/event.h \
  ../communication/protocolMsg.h ../inc/eventImp.h ../inc/payload.h
+eventListenerHandler.o: ../communication/eventListenerHandler.cpp \
+ ../communication/eventListenerHandler.h ../communication/server/server.h \
+ ../communication/server/ihandler.h ../communication/server/serverEnums.h \
+ ../communication/server/socket.h ../communication/server/socket_t.h \
+ ../communication/server/ireactor.h ../communication/server/iDispatcher.h \
+ ../communication/server/ihandler.h ../communication/eventCommHandler.h \
+ ../communication/eventFactoryDispatcher.h \
+ ../communication/ieventFactory.h ../inc/uncopyable.h ../inc/event.h \
+ ../communication/protocolMsg.h ../inc/hub.h \
+ ../communication/protocolListenerSocket.h \
+ ../communication/server/socket.h ../communication/server/listenSocket.h \
+ ../communication/server/serverSocket.h \
+ ../communication/server/commSocket.h ../communication/protocol.h \
+ ../communication/protocolCommSocket.h \
+ ../communication/server/commSocket.h
 listenSocket.o: ../communication/server/listenSocket.cpp \
  ../communication/server/listenSocket.h ../communication/server/socket.h \
  ../communication/server/socket_t.h \

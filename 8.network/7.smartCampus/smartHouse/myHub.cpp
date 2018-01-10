@@ -32,7 +32,7 @@ void* MyHub::DispatcherThread(MyHub* _MyHub)
 {
 	_MyHub->EventsDispatcher();
 	
-	pthread_exit(NULL);
+	return 0;
 }
 
 bool MyHub::Subscribe(Agent* _agent)

@@ -58,8 +58,6 @@ bool NetworkAgent::IsRelevantEvent(const Event& _event) const
 {
 	Query query = ParseEvent(_event);
 	
-	int result = m_topics->IsPresent(query);
-	
 	return m_topics->IsPresent(query);
 }
 

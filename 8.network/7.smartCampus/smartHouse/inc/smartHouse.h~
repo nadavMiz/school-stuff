@@ -24,8 +24,8 @@ private:
 	/* data */
 	std::string m_path;
 	std::string m_soPath;
+	std::tr1::shared_ptr<Initializer> m_initializer;
 	std::tr1::shared_ptr<Hub> m_hub;
-	Initializer* m_initializer;
 	std::set<Agent*> m_agents;
 	NlogFactory* m_logFactory;
 	smartCampus::Communicator m_communicator;

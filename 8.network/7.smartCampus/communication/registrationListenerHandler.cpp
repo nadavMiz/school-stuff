@@ -4,7 +4,7 @@
 namespace smartCampus
 {
 
-RegistrationListenerHandler::RegistrationListenerHandler(netcpp::Server* _server, RegistrationHandlerPtr _handler):
+RegistrationListenerHandler::RegistrationListenerHandler(ServerPtr _server, RegistrationHandlerPtr _handler):
 	m_server(_server)
 ,	m_registrationHandler(_handler){}
 	
@@ -17,7 +17,7 @@ netcpp::EventStatus RegistrationListenerHandler::HandleEvent(netcpp::SocketPtr _
 		while(true)
 		{
 			netcpp::SocketPtr newSocket = listenSocket->Accept();
-			m_server->AddSocket(newSocket, m_registrationHandler);
+			m_server->AddSocket(newSocket, RegistrationHandlerPtr(new RegistrationHandler(*m_registrationHandler)));
 		}
 	}
 	catch(const std::underflow_error& _err){}

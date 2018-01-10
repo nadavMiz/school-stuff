@@ -10,7 +10,7 @@ class IntEvent: public EventImp
 public:
 	IntEvent(){}
 	IntEvent(int _data): m_data(_data){}
-	virtual ~IntEvent(){}
+	//virtual ~IntEvent();
 	
 	virtual std::string SerializePayload() const;
 

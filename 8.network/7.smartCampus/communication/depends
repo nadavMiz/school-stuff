@@ -5,15 +5,15 @@ communicator.o: communicator.cpp communicator.h protocol.h protocolMsg.h \
  ../inc/nthread.h ../inc/atomicOperations.h server/server.h \
  server/ihandler.h server/serverEnums.h server/socket.h server/socket_t.h \
  server/ireactor.h server/iDispatcher.h ../inc/hub.h registrarConector.h \
- sectionData.h registrationHandler.h server/ihandler.h networkAgent.h \
- ../inc/agent.h ../inc/event.h protocolCommSocket.h server/socket.h \
- server/commSocket.h ../inc/agentData.h ../inc/nlog.h isearchTable.h \
- ../inc/uncopyable.h query.h eventSerializer.h ../inc/event.h \
- ../inc/eventImp.h ../inc/payload.h eventCommHandler.h \
- eventFactoryDispatcher.h ieventFactory.h protocolListenerSocket.h \
+ sectionData.h eventCommHandler.h server/ihandler.h \
+ eventFactoryDispatcher.h ieventFactory.h ../inc/uncopyable.h \
+ ../inc/event.h protocolListenerSocket.h server/socket.h \
  server/listenSocket.h server/serverSocket.h server/commSocket.h \
- shmpProtocol.h dbRegistrarConnector.h ../inc/sqlController.h \
- registrationListenerHandler.h
+ protocolCommSocket.h server/commSocket.h shmpProtocol.h \
+ dbRegistrarConnector.h ../inc/sqlController.h registrationHandler.h \
+ networkAgent.h ../inc/agent.h ../inc/event.h ../inc/agentData.h \
+ ../inc/nlog.h isearchTable.h query.h eventSerializer.h ../inc/eventImp.h \
+ ../inc/payload.h registrationListenerHandler.h eventListenerHandler.h
 intEventFactory.o: intEventFactory.cpp intEventFactory.h ieventFactory.h \
  ../inc/uncopyable.h ../inc/event.h protocolMsg.h ../inc/intEvent.h \
  ../inc/eventImp.h ../inc/payload.h
@@ -22,6 +22,14 @@ protocolListenerSocket.o: protocolListenerSocket.cpp \
  server/listenSocket.h server/socket.h server/serverSocket.h \
  server/commSocket.h protocol.h protocolMsg.h protocolCommSocket.h \
  server/commSocket.h
+registrationHandler.o: registrationHandler.cpp registrationHandler.h \
+ ../inc/hub.h server/ihandler.h server/serverEnums.h server/socket.h \
+ server/socket_t.h networkAgent.h ../inc/agent.h ../inc/event.h \
+ protocolCommSocket.h server/socket.h server/commSocket.h protocol.h \
+ protocolMsg.h ../inc/agentData.h ../inc/nlog.h isearchTable.h \
+ ../inc/uncopyable.h query.h eventSerializer.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h registrarConector.h sectionData.h \
+ parsingFunctions.h server/netExceptions.h
 eventSerializer.o: eventSerializer.cpp eventSerializer.h ../inc/event.h \
  protocolMsg.h ../inc/eventImp.h ../inc/payload.h
 protocolCommSocket.o: protocolCommSocket.cpp protocolCommSocket.h \
@@ -35,14 +43,14 @@ networkAgent.o: networkAgent.cpp networkAgent.h ../inc/agent.h \
  ../inc/payload.h ../inc/nlogFactory.h vectorSearchTable.h ../inc/hub.h
 parsingFunctions.o: parsingFunctions.cpp parsingFunctions.h \
  ../inc/eventImp.h ../inc/payload.h
-registrationHandler.o: registrationHandler.cpp registrationHandler.h \
- ../inc/hub.h server/ihandler.h server/serverEnums.h server/socket.h \
- server/socket_t.h networkAgent.h ../inc/agent.h ../inc/event.h \
- protocolCommSocket.h server/socket.h server/commSocket.h protocol.h \
- protocolMsg.h ../inc/agentData.h ../inc/nlog.h isearchTable.h \
- ../inc/uncopyable.h query.h eventSerializer.h ../inc/event.h \
- ../inc/eventImp.h ../inc/payload.h registrarConector.h sectionData.h \
- parsingFunctions.h server/netExceptions.h
+eventListenerHandler.o: eventListenerHandler.cpp eventListenerHandler.h \
+ server/server.h server/ihandler.h server/serverEnums.h server/socket.h \
+ server/socket_t.h server/ireactor.h server/iDispatcher.h \
+ server/ihandler.h eventCommHandler.h eventFactoryDispatcher.h \
+ ieventFactory.h ../inc/uncopyable.h ../inc/event.h protocolMsg.h \
+ ../inc/hub.h protocolListenerSocket.h server/socket.h \
+ server/listenSocket.h server/serverSocket.h server/commSocket.h \
+ protocol.h protocolCommSocket.h server/commSocket.h
 shmpProtocol.o: shmpProtocol.cpp shmpProtocol.h protocol.h protocolMsg.h \
  server/netExceptions.h
 eventFactoryDispatcher.o: eventFactoryDispatcher.cpp \
