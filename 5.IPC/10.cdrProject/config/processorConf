@@ -1,0 +1,5 @@
+
+[#]
+Level = LOG_ERROR
+Path = ../log
+File = processor.log
