@@ -5,7 +5,7 @@
 #include "event.h"
 #include "eventImp.h"
 #include "eventListener.h"
-
+#include "communicator.h"
 
 MyHub::MyHub(): m_events(1000)
 {
@@ -103,4 +103,14 @@ void MyHub::EventsDispatcher()
 void MyHub::SendEvent(const Event _event)
 {
 	m_events.Push(_event);
+}
+
+void MyHub::Subscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName)
+{
+	m_communicator->Subscribe(_sectionName, _query);
+}
+
+void MyHub::Unsubscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName)
+{
+	m_communicator->Unsubscribe(_sectionName, _query);
 }

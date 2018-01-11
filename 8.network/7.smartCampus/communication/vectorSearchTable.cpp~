@@ -13,7 +13,7 @@ std::size_t VectorSearchTable::Remove(const Query& _query)
 	std::size_t count = 0;
 	
 	std::vector<Query>::iterator itr = m_values.begin();
-	while(m_values.end() != (itr = std::find_if(itr, m_values.end(), std::tr1::bind(CompareQueries, _1, _query))))
+	while(m_values.end() != (itr = std::find_if(itr, m_values.end(), std::tr1::bind(CompareQueries, _query, _1))))
 	{
 		itr = m_values.erase(itr);
 		++count;

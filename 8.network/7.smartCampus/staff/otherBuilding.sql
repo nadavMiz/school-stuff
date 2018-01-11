@@ -1,6 +1,6 @@
-CREATE DATABASE SmartBuilding;
+CREATE DATABASE OtherBuilding;
 
-use SmartBuilding;
+use OtherBuilding;
 
 CREATE TABLE Info (
 				    section_name VARCHAR(256),
@@ -65,20 +65,13 @@ INSERT INTO AgentType(agent_type, description, log_name, so_name) VALUES
 ("bad_device", "tmp sensor", NULL, "badDeviceCorp.so");
 
 INSERT INTO Location(building, floor, room) VALUES
-("nadav corp. HQ", 1, "room-1-a");
+("other hub", 5, "6");
 
 INSERT INTO Agents(config, location_id, type_id) VALUES
-("lower: -5 upper: 50 period: 1", 1, 1),
-("low: 15 high: 30", 1, 3),
-("low: 15 high: 30", 1, 3),
-("low: 15 high: 30", 1, 4),
-("low: 15 high: 30", 1, 3),
-("low: 15 high: 30", 1, 3),
-("low: 15 high: 30", 1, 4),
-("low: 15 high: 30", 1, 5),
-("low: 15 high: 30", 1, 4);
+#("lower: -5 upper: 50 period: 1", 1, 1),
+("low: 15 high: 30", 1, 2);
 
 INSERT INTO Info(section_name, ip, msg_port, registration_port) VALUES
-("mainHub", "127.0.0.1", 2004, 2003);
+("otherHub", "127.0.0.1", 5000, 5001);
 
 SELECT * FROM SmartBuilding.AgentType;

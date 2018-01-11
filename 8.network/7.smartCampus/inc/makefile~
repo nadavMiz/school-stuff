@@ -2,7 +2,7 @@
 
 CC = g++
 #SFLAGS = -g -shared -Wl,-soname,
-CXXFLAGS = -g -Wall -ansi -pedantic
+CXXFLAGS = -g -Wall -ansi -pedantic -fPIC
 LDFLAGS = -g -pthread -ldl -lmysqlcppconn
 # Directory structure
 #INC_DIR = -Iinc/ -I../inc/ -I../communication -I../communication/server

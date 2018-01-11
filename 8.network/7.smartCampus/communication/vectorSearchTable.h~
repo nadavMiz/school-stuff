@@ -17,7 +17,7 @@ public:
 	//virtual ~VectorSearchTable();
 	virtual void Insert(const Query& _query);
 	virtual std::size_t Remove(const Query& _query);
-	virtual bool ExactRemove(Query& _query);
+	virtual bool ExactRemove(const Query& _query);
 	virtual void Clear();
 	virtual bool IsPresent(const Query& _query) const;
 	virtual bool IsEmpty() const;
@@ -37,7 +37,7 @@ inline bool VectorSearchTable::CompareQueries(const Query& _first, const Query& 
 
 inline bool VectorSearchTable::CompareQuerieValues(const std::string& _a, const std::string& _b)
 {
-	return (_a == "ALL" || _b == "ALL" || _a == _b);
+	return (_a == "ALL" || _a == _b);
 }
 
 inline void VectorSearchTable::Insert(const Query& _query)

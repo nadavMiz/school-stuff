@@ -37,7 +37,7 @@ inline bool VectorSearchTable::CompareQueries(const Query& _first, const Query& 
 
 inline bool VectorSearchTable::CompareQuerieValues(const std::string& _a, const std::string& _b)
 {
-	return (_a == "ALL" || _b == "ALL" || _a == _b);
+	return (_a == "ALL" || _a == _b);
 }
 
 inline void VectorSearchTable::Insert(const Query& _query)

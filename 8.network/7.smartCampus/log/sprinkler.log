@@ -1,18 +1,15 @@
-19::38::14 4: fire detected. starting sprinkler
-19::38::14 7: fire detected. starting sprinkler
-19::38::14 8: fire detected. starting sprinkler
-19::38::15 4: fire put out. turning off sprinkler
-19::38::15 7: fire put out. turning off sprinkler
-19::38::15 8: fire put out. turning off sprinkler
-19::38::16 4: fire detected. starting sprinkler
-19::38::16 7: fire detected. starting sprinkler
-19::38::16 8: fire detected. starting sprinkler
-19::38::17 4: fire put out. turning off sprinkler
-19::38::17 7: fire put out. turning off sprinkler
-19::38::17 8: fire put out. turning off sprinkler
-19::38::18 4: fire detected. starting sprinkler
-19::38::18 7: fire detected. starting sprinkler
-19::38::18 8: fire detected. starting sprinkler
-19::38::19 4: fire put out. turning off sprinkler
-19::38::19 7: fire put out. turning off sprinkler
-19::38::19 8: fire put out. turning off sprinkler
+19::30::7 7: fire detected. starting sprinkler
+19::30::7 4: fire detected. starting sprinkler
+19::30::7 9: fire detected. starting sprinkler
+19::30::10 7: fire put out. turning off sprinkler
+19::30::10 4: fire put out. turning off sprinkler
+19::30::10 9: fire put out. turning off sprinkler
+19::30::13 7: fire detected. starting sprinkler
+19::30::13 4: fire detected. starting sprinkler
+19::30::13 9: fire detected. starting sprinkler
+19::30::16 7: fire put out. turning off sprinkler
+19::30::16 4: fire put out. turning off sprinkler
+19::30::16 9: fire put out. turning off sprinkler
+19::30::19 7: fire detected. starting sprinkler
+19::30::19 4: fire detected. starting sprinkler
+19::30::19 9: fire detected. starting sprinkler

@@ -5,7 +5,7 @@
 
 class Agent;
 class Event;
-namespace smartCampus
+namespace 
 {
 	class Communicator;
 }

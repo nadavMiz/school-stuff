@@ -8,8 +8,8 @@
 class IntEvent: public EventImp
 {
 public:
-	IntEvent(){}
-	IntEvent(int _data): m_data(_data){}
+	IntEvent(){m_topic = "int";}
+	IntEvent(int _data): m_data(_data){m_topic = "int";}
 	//virtual ~IntEvent();
 	
 	virtual std::string SerializePayload() const;

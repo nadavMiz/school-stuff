@@ -19,13 +19,6 @@ typedef std::tr1::shared_ptr<ISearchTable> ISearchTablePtr;
 
 class RegistrationConnector: private Uncopyable
 {
-public:
-	RegistrationConnector(RegistrarConectorPtr _registrar, ProtocolPtr _protocol);
-	//~RegistrationConnector();
-	
-	void Register(const std::string& _sectionName, const Query& _query);
-	void Unregister(const std::string& _sectionName, const Query& _query);
-
 private:
 	class Record
 	{
@@ -34,7 +27,7 @@ private:
 		//~Record();
 		void Register(const Query& _query);
 		void Unregister(const Query& _query);
-		void Empty() const;
+		inline bool Empty() const;
 	private:
 		ISearchTablePtr m_queries;
 		ProtocolCommSocket m_socket;
@@ -42,17 +35,37 @@ private:
 		static const QuerySerializer m_serializer;
 		
 	private:
-		ProtocolMsg GetRequestMsg(const Query& _query, const std::string& _topic) const;
+		void InitializeRequestMsg(const Query& _query, const std::string& _topic, ProtocolMsg& _msg) const;
 		void SendRequest(const Query& _query, const std::string& _topic);
 		void ReciveResponse();
 	};
+typedef std::tr1::shared_ptr<RegistrationConnector::Record> RecordPtr;
+
+public:
+	RegistrationConnector(RegistrarConectorPtr _registrar, ProtocolPtr _protocol);
+	//~RegistrationConnector();
+	
+	void Register(const std::string& _sectionName, const Query& _query);
+	void Unregister(const std::string& _sectionName, const Query& _query);
 
 private:
 	/* data */
 	RegistrarConectorPtr m_registrar;
 	ProtocolPtr m_protocol;
-	std::map<std::string, std::tr1::shared_ptr<Record> >  m_sectionRegistrations;
+	std::map<std::string, RecordPtr >  m_sectionRegistrations;
+	
+private:
+	RecordPtr GetRecord(const std::string& _section);
+	RecordPtr CreateRecord(const std::string& _section) const;
 };
+
+
+/*------------------------RegistrationConnector::Record-----------------------------------*/
+
+inline bool RegistrationConnector::Record::Empty() const
+{
+	return m_queries->IsEmpty();
+}
 
 }
 

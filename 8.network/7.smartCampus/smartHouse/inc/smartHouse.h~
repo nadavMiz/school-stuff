@@ -22,8 +22,8 @@ public:
 
 private:
 	/* data */
-	std::string m_path;
 	std::string m_soPath;
+	std::tr1::shared_ptr<netcpp::SqlController> m_dataBase;
 	std::tr1::shared_ptr<Initializer> m_initializer;
 	std::tr1::shared_ptr<Hub> m_hub;
 	std::set<Agent*> m_agents;

@@ -22,7 +22,7 @@ TARGET = smartHouse.out
 all: $(TARGET)
 
 $(TARGET): $(OBJS) $(LIB_OBJS)
-	g++ -shared hvac.o fireSensor.o sprinkler.o nadavElectric.o agent.o guard.o event.o nlog.o signalfireSensor.o -o nadavElectric.so
+	g++ -shared hvac.o fireSensor.o sprinkler.o nadavElectric.o agent.o guard.o event.o nlog.o signalfireSensor.o ../inc/query.o -o nadavElectric.so
 
 	g++ -shared tmpSensor.o agent.o event.o nlog.o guard.o -o nadavSensors.so
 

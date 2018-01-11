@@ -29,6 +29,7 @@ netcpp::EventStatus RegistrationHandler::HandleEvent(netcpp::SocketPtr _socket)
 	}
 	catch(const netcpp::BadRequest_error& _err)
 	{
+		std::cout << "why: " << _err.what() << std::endl;
 		response = "badRequest";
 	}
 	catch(const netcpp::BrokenPipe_error& _err)
@@ -37,7 +38,6 @@ netcpp::EventStatus RegistrationHandler::HandleEvent(netcpp::SocketPtr _socket)
 	}
 	catch(const std::exception& _err)
 	{
-		//std::cout << "why: " << _err.what() << std::endl;
 		response = "error";
 	}
 	

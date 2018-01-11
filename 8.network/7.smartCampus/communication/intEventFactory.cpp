@@ -36,7 +36,7 @@ void IntEventFactory::InsertEventHeaderData(const std::string& _str, IntEvent* _
 	}
 	else if("section" == key)
 	{
-		valueStream >> _event->m_room;
+		valueStream >> _event->m_section;
 	}
 	else if("floor" == key)
 	{
@@ -55,6 +55,7 @@ void IntEventFactory::InsertEventHeaderData(const std::string& _str, IntEvent* _
 Event IntEventFactory::CreateEvent(const ProtocolMsg& _msg)
 {
 	IntEvent* event = new IntEvent;
+	event->m_topic = "int";
 	
 	std::vector<std::string>::const_iterator itr;
 	for(itr = _msg.m_values.begin(); itr != _msg.m_values.end(); ++itr)
