@@ -13,6 +13,7 @@ public:
 
 	void setPath(const std::string& _newPath) {m_path = _newPath;}
 	virtual Nlog* GetLog(const std::string& _name);
+	static Nlog* GetLog1(const std::string& _name);
 
 protected:
 	~NlogFactory();

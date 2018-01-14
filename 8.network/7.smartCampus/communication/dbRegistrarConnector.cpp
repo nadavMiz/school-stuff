@@ -2,12 +2,15 @@
 #include <sstream>
 
 #include "dbRegistrarConnector.h"
+#include "nlogFactory.h"
 #include "netExceptions.h" //BadRequest_error
 
 namespace smartCampus
 {
 
-DbRegistrarConnector::DbRegistrarConnector(): m_registrar("Registrar"){}
+DbRegistrarConnector::DbRegistrarConnector(): 
+	m_registrar("Registrar")
+,	m_log(NlogFactory::GetLog1("system.log")){}
 
 SectionData DbRegistrarConnector::GetSectionData(const std::string& _data)
 {
@@ -23,6 +26,7 @@ SectionData DbRegistrarConnector::CreateSectionData(ResultSetPtr _results)
 {
 	if(!_results->next())
 	{
+		m_log->write("invalid section name", "DbRegistrarConnector::CreateSectionData");
 		throw netcpp::BadRequest_error("invalid section name");
 	}
 	

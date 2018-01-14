@@ -1,13 +1,14 @@
 #include <algorithm> //for_each
 #include <tr1/functional> //bind
 #include <string>
-#include <iostream>
+#include <sstream>
 
 #include "registrationHandler.h"
 #include "parsingFunctions.h"
 #include "query.h"
 #include "netExceptions.h"
 #include "sectionData.h"
+#include "nlogFactory.h"
 
 namespace smartCampus
 {
@@ -15,7 +16,8 @@ namespace smartCampus
 RegistrationHandler::RegistrationHandler(Hub* _hub, RegistrarConectorPtr _registrar, ProtocolPtr _protocol):
 	m_hub(_hub)
 ,	m_registrar(_registrar)
-,	m_protocol(_protocol){}
+,	m_protocol(_protocol)
+,	m_log(NlogFactory::GetLog1("system.log")){}
 
 netcpp::EventStatus RegistrationHandler::HandleEvent(netcpp::SocketPtr _socket)
 {
@@ -29,15 +31,26 @@ netcpp::EventStatus RegistrationHandler::HandleEvent(netcpp::SocketPtr _socket)
 	}
 	catch(const netcpp::BadRequest_error& _err)
 	{
-		std::cout << "why: " << _err.what() << std::endl;
+		stringstream ss;
+		ss << "cought bad_request at RegistrationHandler::HandleEvent: " << _err.what();
+		m_log->write(ss.str(), "system");
+		
 		response = "badRequest";
 	}
 	catch(const netcpp::BrokenPipe_error& _err)
 	{
+		stringstream ss;
+		ss << "cought broken_pipe at RegistrationHandler::HandleEvent: " << _err.what();
+		m_log->write(ss.str(), "system");
+		
 		return netcpp::e_statusToDelete;
 	}
 	catch(const std::exception& _err)
 	{
+		stringstream ss;
+		ss << "cought exception at RegistrationHandler::HandleEvent: " << _err.what();
+		m_log->write(ss.str(), "system");
+		
 		response = "error";
 	}
 	
@@ -87,6 +100,11 @@ Query RegistrationHandler::ParseMsg(const ProtocolMsg& _msg) const
 {
 	if(_msg.m_topic != "subscribe" && _msg.m_topic != "unsubscribe")
 	{
+		std::stringstream ss;
+		ss << "RegistrationHandler::ParseMsgField: invalid subscription type " << std::endl;
+		ss << "	msg" << _msg;
+		m_log->write(ss.str(), "system");
+		
 		throw netcpp::BadRequest_error("invalid subscription type");
 	}
 
@@ -102,6 +120,8 @@ NetworkAgentPtr RegistrationHandler::GetNetworkAgent(const std::string& _section
 	ParsingFunctions::ParseKeyValue(_sectionPair, key, section);
 	if("section" != key)
 	{
+		m_log->write("RegistrationHandler::GetNetworkAgent: invalid key" + key, "system");
+		
 		throw netcpp::BadRequest_error("invalid key");
 	}
 

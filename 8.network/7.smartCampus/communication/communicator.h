@@ -3,15 +3,13 @@
 
 #include <tr1/memory>
 
+#include "uncopyable.h"
 #include "nthread.h"
 #include "query.h"
 #include "sqlController.h"
 #include "sectionData.h"
+#include "inCommunication.h"
 
-namespace netcpp
-{
-	class Server;
-}
 class Hub;
 
 namespace smartCampus
@@ -25,11 +23,11 @@ typedef std::tr1::shared_ptr<RegistrarConnector> RegistrarConectorPtr;
 typedef std::tr1::shared_ptr<RegistrationConnector> RegistrationConectorPtr;
 typedef std::tr1::shared_ptr<netcpp::SqlController> SqlControllerPtr;
 
-class Communicator
+class Communicator: private Uncopyable
 {
 public:
 	Communicator(Hub* _hub, SqlControllerPtr _dataBase);
-	~Communicator();
+	//~Communicator();
 	
 	void Subscribe(const std::string& _sectionName, const Query& _query);
 	void Unsubscribe(const std::string& _sectionName, const Query& _query);
@@ -37,10 +35,9 @@ public:
 private:
 	/* data */
 	std::tr1::shared_ptr<Protocol> m_protocol;
-	std::tr1::shared_ptr<netcpp::Server> m_server;
-	advcpp::sync::Nthread<netcpp::Server> m_serverThread;
 	RegistrarConectorPtr m_registrarConnector;
 	RegistrationConectorPtr m_registrationConnector;
+	InCommunication m_inCommunication;
 	
 private:
 	SectionData GetSectionData(SqlControllerPtr _dataBase) const;

@@ -10,6 +10,7 @@
 #include "protocol.h"
 #include "protocolMsg.h"
 #include "registrarConector.h"
+#include "nlog.h"
 
 namespace smartCampus
 {
@@ -31,6 +32,7 @@ private:
 	Hub* m_hub;
 	RegistrarConectorPtr m_registrar;
 	ProtocolPtr m_protocol;
+	Nlog* m_log;
 	std::map<std::string, NetworkAgentPtr> m_networkAgents;
 	
 private:

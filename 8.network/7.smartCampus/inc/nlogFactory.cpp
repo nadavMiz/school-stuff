@@ -30,3 +30,8 @@ Nlog* NlogFactory::GetLog(const std::string& _name)
 	
 	return newLog;
 }
+
+Nlog* NlogFactory::GetLog1(const std::string& _name)
+{
+	return m_logFactory.GetLog(_name);
+}

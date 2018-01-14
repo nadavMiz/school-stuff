@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 
+#include "nlog.h"
 #include "query.h"
 #include "isearchTable.h"
 #include "registrarConector.h"
@@ -31,6 +32,7 @@ private:
 	private:
 		ISearchTablePtr m_queries;
 		ProtocolCommSocket m_socket;
+		Nlog* m_log;
 		
 		static const QuerySerializer m_serializer;
 		
@@ -53,6 +55,7 @@ private:
 	RegistrarConectorPtr m_registrar;
 	ProtocolPtr m_protocol;
 	std::map<std::string, RecordPtr >  m_sectionRegistrations;
+	Nlog* m_log;
 	
 private:
 	RecordPtr GetRecord(const std::string& _section);

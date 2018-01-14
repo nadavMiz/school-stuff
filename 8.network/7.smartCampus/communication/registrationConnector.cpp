@@ -1,8 +1,10 @@
 #include <stdexcept>
+#include <sstream>
 
 #include "registrationConnector.h"
 #include "vectorSearchTable.h"
 #include "protocolMsg.h"
+#include "nlogFactory.h"
 
 namespace smartCampus
 {
@@ -13,7 +15,8 @@ const QuerySerializer RegistrationConnector::Record::m_serializer;
 
 RegistrationConnector::Record::Record(const char* _ip, int _port, ProtocolPtr _protocol):
 	m_queries(new VectorSearchTable)
-,	m_socket(_ip, _port, _protocol){}
+,	m_socket(_ip, _port, _protocol)
+,	m_log(NlogFactory::GetLog1("system.log")){}
 
 void RegistrationConnector::Record::InitializeRequestMsg(const Query& _query, const std::string& _topic, ProtocolMsg& _msg) const
 {
@@ -35,6 +38,7 @@ void RegistrationConnector::Record::ReciveResponse()
 	
 	if(response != "ok")
 	{
+		m_log->write("RegistrationConnector::Record::ReciveResponse: request failed: " + response, "system");
 		throw std::runtime_error("request failed");
 	}
 }
@@ -50,6 +54,7 @@ void RegistrationConnector::Record::Register(const Query& _query)
 	}
 	catch(const std::exception& _err)
 	{
+		m_log->write(_err.what(), "system");
 		m_queries->ExactRemove(_query);
 		throw;
 	}
@@ -67,8 +72,8 @@ void RegistrationConnector::Record::Unregister(const Query& _query)
 
 RegistrationConnector::RegistrationConnector(RegistrarConectorPtr _registrar, ProtocolPtr _protocol):
 	m_registrar(_registrar)
-,	m_protocol(_protocol){}
-
+,	m_protocol(_protocol)
+,	m_log(NlogFactory::GetLog1("system.log")){}
 
 RegistrationConnector::RecordPtr RegistrationConnector::CreateRecord(const std::string& _section) const
 {
@@ -102,6 +107,10 @@ void RegistrationConnector::Register(const std::string& _section, const Query& _
 	{
 		if(record->Empty())
 		{
+			std::stringstream ss;
+			ss << "exception " << _err.what() << ". query: " << _query << std::endl;
+			m_log->write(ss.str(), "RegistrationConnector::Register");
+			
 			m_sectionRegistrations.erase(_section);
 			throw;
 		}
@@ -113,6 +122,10 @@ void RegistrationConnector::Unregister(const std::string& _section, const Query&
 	std::map<std::string, std::tr1::shared_ptr<Record> >::iterator recordItr = m_sectionRegistrations.find(_section);
 	if(recordItr != m_sectionRegistrations.end())
 	{
+		std::stringstream ss;
+		ss << "invalid section name in query: " << _query << std::endl;
+		m_log->write(ss.str(), "RegistrationConnector::Unregister");
+		
 		throw std::runtime_error("invalid section name");
 	}
 	

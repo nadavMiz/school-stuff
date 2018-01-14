@@ -3,6 +3,7 @@
 
 #include "registrarConector.h"
 #include "sqlController.h"
+#include "nlog.h"
 
 namespace smartCampus
 {
@@ -21,6 +22,7 @@ private:
 	
 private:
 	SectionData CreateSectionData(ResultSetPtr _results);
+	Nlog* m_log;
 };
 
 }
