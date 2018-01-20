@@ -2,7 +2,7 @@
 
 #include "initializer.h"
 #include "agentFactory.h"
-#include "configParser.h"
+#include "dbConfigParser.h"
 #include "nlogFactory.h"
 
 Initializer::Initializer(const std::string& _logPath)
@@ -10,7 +10,7 @@ Initializer::Initializer(const std::string& _logPath)
 	NlogFactory& logFactory = NlogFactory::GetNlogFactory();
 	logFactory.setPath(_logPath);
 	
-	m_parser = new ConfigParser;
+	m_parser = new DBConfigParser;
 	m_agentFactory = new AgentFactory;
 	m_log = logFactory.GetLog("system.log");
 }
@@ -22,10 +22,10 @@ Initializer::~Initializer()
 }
 
 void Initializer::LoadAgents(Hub* _hub, std::set<Agent*>& _agents, 
-			SqlControllerPtr _dataBase, const std::string& _soPath)
+			const std::string& _configPath, const std::string& _soPath)
 {
 	m_agentFactory->SetPath(_soPath);
-	m_parser->ParseDataBase(_dataBase);
+	m_parser->Parse(_configPath);
 	
 	AgentData data;
 	std::string soName;

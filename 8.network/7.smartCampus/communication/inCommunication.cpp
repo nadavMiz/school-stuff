@@ -5,6 +5,8 @@
 #include "eventCommHandler.h"
 #include "registrationListenerHandler.h"
 #include "eventListenerHandler.h"
+#include "sectionData.h"
+#include "dbSmartBuildingInformation.h"
 
 namespace smartCampus
 {
@@ -14,12 +16,13 @@ typedef std::tr1::shared_ptr<PrototcolListenerSocket> PrototcolListenerSocketPtr
 typedef std::tr1::shared_ptr<EventCommHandler> EventCommHandlerPtr;
 typedef std::tr1::shared_ptr<netcpp::IHandler> IHandlerPtr;
 
-InCommunication::InCommunication(Hub* _hub, ProtocolPtr _protocol, RegistrarConectorPtr _registrar, SqlControllerPtr _dataBase):
+InCommunication::InCommunication(Hub* _hub, ProtocolPtr _protocol, RegistrarConectorPtr _registrar, const std::string& _configPath):
 	m_protocol(_protocol)
+,	m_smartBuildingInformation(new DBSmartBuildingInformation)
 ,	m_server(new  netcpp::Server)
 ,	m_serverThread(m_server, &netcpp::Server::ServerRoutine)
 {
-	SectionData data = GetSectionData(_dataBase);
+	SectionData data = m_smartBuildingInformation->GetSectionData(_configPath);
 
 	AddRegistrationHandler(_hub, data.m_regtistrationPort, _registrar);
 	
@@ -54,30 +57,6 @@ void InCommunication::AddEventHandler(Hub* _hub, int _port)
 	IHandlerPtr eventListenHandler(new EventListenerHandler(m_server, enentHandler));
 	
 	m_server->AddSocket(eventListener, eventListenHandler);
-}
-
-SectionData InCommunication::GetSectionData(SqlControllerPtr _dataBase) const
-{
-	ResultSetPtr results = _dataBase->Query("SELECT * FROM Info");
-	
-	return CreateSectionData(results);
-}
-
-SectionData InCommunication::CreateSectionData(ResultSetPtr _results) const
-{
-	if(!_results->next())
-	{
-		throw std::runtime_error("invalid section name");
-	}
-	
-	SectionData data;
-	
-	data.m_name = _results->getString("section_name");
-	data.m_ip = _results->getString("ip");
-	data.m_msgPort = _results->getInt("msg_port");
-	data.m_regtistrationPort = _results->getInt("registration_port");
-	
-	return data;
 }
 
 }

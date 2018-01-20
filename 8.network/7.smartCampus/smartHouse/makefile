@@ -5,7 +5,7 @@ CC = g++
 CXXFLAGS = -g -Wall -ansi -pedantic
 LDFLAGS = -g -pthread -ldl -lmysqlcppconn
 # Directory structure
-INC_DIR = -Iinc/ -I../inc/ -I../communication -I../communication/server
+INC_DIR = -I../inc/ -I../communication -I../communication/server
 CXXFLAGS += $(INC_DIR)
 #LIB_DIR = ../../../lib
 #LDFLAGS += -L$(LIB_DIR)

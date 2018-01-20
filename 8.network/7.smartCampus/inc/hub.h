@@ -13,8 +13,8 @@ namespace smartCampus
 class Hub
 {
 public:
-	Hub() {}
-	virtual ~Hub() {}
+	Hub(){}
+	virtual ~Hub(){}
 	virtual bool Subscribe(Agent* _agent) = 0;
 	virtual bool Unsubscribe(Agent* _agent) = 0;
 	virtual void Subscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName) = 0;

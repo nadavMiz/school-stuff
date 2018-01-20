@@ -9,11 +9,11 @@
 namespace smartCampus
 {
 
-Communicator::Communicator(Hub* _hub, SqlControllerPtr _dataBase):
+Communicator::Communicator(Hub* _hub, const std::string& _configPath):
 	m_protocol(new ShmpProtocol)
 ,	m_registrarConnector(new DbRegistrarConnector)
 ,	m_registrationConnector(new RegistrationConnector(m_registrarConnector, m_protocol))
-,	m_inCommunication(_hub, m_protocol, m_registrarConnector, _dataBase)
+,	m_inCommunication(_hub, m_protocol, m_registrarConnector, _configPath)
 {}
 
 void Communicator::Subscribe(const std::string& _sectionName, const Query& _query)

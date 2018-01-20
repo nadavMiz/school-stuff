@@ -4,7 +4,7 @@
 #include <string>
 #include <map>
 
-class Nlog;
+#include "nlog.h"
 
 class NlogFactory
 {
