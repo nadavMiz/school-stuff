@@ -33,7 +33,7 @@ NetworkAgent::NetworkAgent(ClientSocketPtr _socket, Hub* _hub):
 ,	m_socket(_socket)
 ,	m_topics(new VectorSearchTable)
 {
-	m_hub->Subscribe(this);
+	m_hub->Subscribe(this, (Query()));
 }
 
 NetworkAgent::~NetworkAgent()

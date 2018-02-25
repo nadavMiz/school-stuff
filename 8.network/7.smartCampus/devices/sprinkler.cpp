@@ -2,11 +2,11 @@
 #include "hub.h"
 #include "intEvent.h"
 #include "nlog.h"
-
+#include "query.h"
 
 Sprinkler::Sprinkler(const AgentData& _data, Hub* _hub): Agent(_data, _hub), m_isActive(false)
 {
-	m_hub->Subscribe(this);
+	m_hub->Subscribe(this, (smartCampus::Query()));
 }
 
 Sprinkler::~Sprinkler()

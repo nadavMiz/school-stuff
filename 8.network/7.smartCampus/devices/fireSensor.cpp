@@ -14,7 +14,7 @@ FireSensor::FireSensor(const AgentData& _data, Hub* _hub): Agent(_data, _hub)
 {
 	m_isFire = false;
 	
-	_hub->Subscribe(this);
+	_hub->Subscribe(this, (smartCampus::Query()));
 	
 	if(0 != pthread_create(&m_thread, 0, (void* (*) (void*))FireSensorRoutine, this))
 	{

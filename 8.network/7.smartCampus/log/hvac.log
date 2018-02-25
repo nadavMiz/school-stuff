@@ -1,16 +1,36 @@
-22::37::58 6: fire detected. turning off HVAC
-22::37::58 2: fire detected. turning off HVAC
-22::37::58 3: fire detected. turning off HVAC
-22::37::58 5: fire detected. turning off HVAC
-22::38::2 2: tmp is: 4. turning on HVAC
-22::38::2 3: tmp is: 4. turning on HVAC
-22::38::2 5: tmp is: 4. turning on HVAC
-22::38::2 6: tmp is: 4. turning on HVAC
-22::38::3 6: tmp is: 27. turning off HVAC
-22::38::3 5: tmp is: 27. turning off HVAC
-22::38::3 2: tmp is: 27. turning off HVAC
-22::38::3 3: tmp is: 27. turning off HVAC
-22::38::4 2: fire detected. turning off HVAC
-22::38::4 6: fire detected. turning off HVAC
-22::38::4 3: fire detected. turning off HVAC
-22::38::4 5: fire detected. turning off HVAC
+20::46::46 2: tmp is: 14. turning on HVAC
+20::46::46 6: tmp is: 14. turning on HVAC
+20::46::46 3: tmp is: 14. turning on HVAC
+20::46::46 5: tmp is: 14. turning on HVAC
+20::46::48 2: tmp is: 27. turning off HVAC
+20::46::48 3: tmp is: 27. turning off HVAC
+20::46::48 5: tmp is: 27. turning off HVAC
+20::46::48 6: tmp is: 27. turning off HVAC
+20::46::49 2: tmp is: 4. turning on HVAC
+20::46::49 3: tmp is: 4. turning on HVAC
+20::46::49 5: tmp is: 4. turning on HVAC
+20::46::49 6: tmp is: 4. turning on HVAC
+20::46::50 2: tmp is: 24. turning off HVAC
+20::46::50 3: tmp is: 24. turning off HVAC
+20::46::50 5: tmp is: 24. turning off HVAC
+20::46::50 6: tmp is: 24. turning off HVAC
+20::46::50 6: fire detected. turning off HVAC
+20::46::50 2: fire detected. turning off HVAC
+20::46::50 5: fire detected. turning off HVAC
+20::46::50 3: fire detected. turning off HVAC
+20::46::56 2: tmp is: 11. turning on HVAC
+20::46::56 3: tmp is: 11. turning on HVAC
+20::46::56 5: tmp is: 11. turning on HVAC
+20::46::56 6: tmp is: 11. turning on HVAC
+20::46::56 3: fire detected. turning off HVAC
+20::46::56 6: fire detected. turning off HVAC
+20::46::56 2: fire detected. turning off HVAC
+20::46::56 5: fire detected. turning off HVAC
+20::47::1 2: tmp is: 13. turning on HVAC
+20::47::1 3: tmp is: 13. turning on HVAC
+20::47::1 5: tmp is: 13. turning on HVAC
+20::47::1 6: tmp is: 13. turning on HVAC
+20::47::2 3: tmp is: 21. turning off HVAC
+20::47::2 5: tmp is: 21. turning off HVAC
+20::47::2 6: tmp is: 21. turning off HVAC
+20::47::2 2: tmp is: 21. turning off HVAC

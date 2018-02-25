@@ -4,7 +4,7 @@
 #include "signalFireSensor.h"
 #include "interhubSprinkler.h"
 
-extern "C" Agent* CreateAgent(const string& _deviceName, const AgentData& _data, smartCampus::IHubAPI* _hub)
+extern "C" Agent* CreateAgent(const string& _deviceName, const AgentData& _data, Hub* _hub)
 {
 	if("HVAC" == _deviceName)
 	{

@@ -4,10 +4,9 @@
 #include <set>
 #include <string>
 
-#include "iHubAPI.h"
-
 class AgentFactory;
 class IConfigParser;
+class Hub;
 class Agent;
 class Nlog;
 
@@ -17,7 +16,7 @@ public:
 	Initializer(const std::string& _logPath);
 	~Initializer();
 	
-	void LoadAgents(smartCampus::IHubAPI* _hubAPI, std::set<Agent*>& _agents, 
+	void LoadAgents(Hub* _hub, std::set<Agent*>& _agents, 
 		const std::string& _configPath, const std::string& _soPath);
 
 private:

@@ -30,7 +30,7 @@ Hvac::Hvac(const AgentData& _data, Hub* _hub): Agent(_data, _hub)
 		}
 	}
 	
-	m_hub->Subscribe(this);
+	m_hub->Subscribe(this, (smartCampus::Query()));
 }
 
 Hvac::~Hvac()

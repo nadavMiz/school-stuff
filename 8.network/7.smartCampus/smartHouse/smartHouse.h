@@ -8,7 +8,6 @@
 #include "agent.h"
 #include "nlogFactory.h"
 #include "communicator.h"
-#include "iHubAPI.h"
 
 class Hub;
 class Initializer;
@@ -30,7 +29,6 @@ private:
 	std::set<Agent*> m_agents;
 	NlogFactory* m_logFactory;
 	smartCampus::Communicator m_communicator;
-	std::tr1::shared_ptr<smartCampus::IHubAPI> m_hubAPI;
 	
 private:
 	SmartHouse(const SmartHouse& _smartHouse);

@@ -1,21 +1,25 @@
 #include <new>
 
 #include "agent.h"
-#include "myHub.h"
+#include "query.h"
+#include "singleSectionDispatcher.h"
 #include "event.h"
 #include "eventImp.h"
 #include "eventListener.h"
 #include "communicator.h"
 
-MyHub::MyHub(): m_events(1000)
+namespace smartCampus
 {
-	if(pthread_create(&m_reciverThread, NULL, (void * (*)(void *))MyHub::DispatcherThread, this) != 0)
+
+SingleSectionDispatcher::SingleSectionDispatcher(): m_events(1000)
+{
+	if(pthread_create(&m_reciverThread, NULL, (void * (*)(void *))SingleSectionDispatcher::DispatcherThread, this) != 0)
 	{
 		throw runtime_error("thread create");
 	}
 }
 
-MyHub::~MyHub()
+SingleSectionDispatcher::~SingleSectionDispatcher()
 {
 	pthread_cancel(m_reciverThread);
 	pthread_join(m_reciverThread, NULL);
@@ -28,38 +32,33 @@ MyHub::~MyHub()
 }
 
 
-void* MyHub::DispatcherThread(MyHub* _MyHub)
+void* SingleSectionDispatcher::DispatcherThread(SingleSectionDispatcher* _SingleSectionDispatcher)
 {
-	_MyHub->EventsDispatcher();
+	_SingleSectionDispatcher->EventsDispatcher();
 	
 	return 0;
 }
 
-bool MyHub::Subscribe(Agent* _agent)
-{
-	if(0 == _agent)
-	{
-		return false;
-	}
-	
+void SingleSectionDispatcher::Subscribe(Agent* _agent, const Query& _query)
+{	
 	if(m_eventListeners.find(_agent) !=  m_eventListeners.end())
 	{
-		return false;
+		throw std::runtime_error("agent already exists");
 	}
 	
+	EventListener* eventListener = new EventListener(_agent);
 	try
 	{
-		EventListener* eventListener = new EventListener(_agent);
 		m_eventListeners.insert(std::pair<Agent*, EventListener*>(_agent, eventListener));
-		return true;
 	}
-	catch(exception& _err)
+	catch(const std::exception& _err)
 	{
-		return false;
+		delete eventListener;
+		throw;
 	}
 }
 
-bool MyHub::Unsubscribe(Agent* _agent)
+bool SingleSectionDispatcher::Unsubscribe(Agent* _agent)
 {
 	if(0 == _agent)
 	{
@@ -78,7 +77,7 @@ bool MyHub::Unsubscribe(Agent* _agent)
 	return true;
 }
 
-void MyHub::Notify(const Event _event)
+void SingleSectionDispatcher::Notify(const Event _event)
 {
 	map<Agent*, EventListener*>::iterator itr;
 	for(itr = m_eventListeners.begin(); itr != m_eventListeners.end(); ++itr)
@@ -90,7 +89,7 @@ void MyHub::Notify(const Event _event)
 	}
 }
 
-void MyHub::EventsDispatcher()
+void SingleSectionDispatcher::EventsDispatcher()
 {
 	Event event(new EventImp);
 	while(true)
@@ -100,17 +99,9 @@ void MyHub::EventsDispatcher()
 	}
 }
 
-void MyHub::SendEvent(const Event _event)
+void SingleSectionDispatcher::SendEvent(const Event _event)
 {
 	m_events.Push(_event);
 }
 
-void MyHub::Subscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName)
-{
-	m_communicator->Subscribe(_sectionName, _query);
-}
-
-void MyHub::Unsubscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName)
-{
-	m_communicator->Unsubscribe(_sectionName, _query);
 }
