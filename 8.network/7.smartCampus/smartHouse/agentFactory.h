@@ -9,10 +9,9 @@
 #include "uncopyable.h"
 #include "agent.h"
 #include "agentData.h"
+#include "iHubAPI.h"
 
-typedef Agent* (*Creator) (const string& _deviceName, const AgentData& _data, Hub* _hub);
-
-class Hub;
+typedef Agent* (*Creator) (const string& _deviceName, const AgentData& _data, smartCampus::IHubAPI* _hubAPI);
 
 class AgentFactory: private Uncopyable
 {
@@ -20,7 +19,7 @@ public:
 	AgentFactory(const std::string& _soPath = DEFAULT_SO_PATH);
 	~AgentFactory();
 	
-	Agent* CreateAgent(const AgentData& _data, const string& _soName, Hub* _hub);
+	Agent* CreateAgent(const AgentData& _data, const string& _soName, smartCampus::IHubAPI* _hubAPI);
 	void SetPath(const string& _path);
 
 private:

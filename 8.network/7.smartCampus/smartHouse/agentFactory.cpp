@@ -54,14 +54,14 @@ Creator AgentFactory::GetAgentCreator(const string& _fileName)
 
 /*----------------------------------------------------------------------------*/
 
-Agent* AgentFactory::CreateAgent(const AgentData& _data, const string& _soName, Hub* _hub)
+Agent* AgentFactory::CreateAgent(const AgentData& _data, const string& _soName, smartCampus::IHubAPI* _hubAPI)
 {
-	if(0 == _hub)
+	if(0 == _hubAPI)
 	{
 		throw runtime_error("hub missing");
 	}
 	
 	Creator creator = GetAgentCreator(_soName);
 
-	return creator(_data.m_type , _data, _hub);
+	return creator(_data.m_type , _data, _hubAPI);
 }

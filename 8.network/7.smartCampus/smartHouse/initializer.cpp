@@ -21,7 +21,7 @@ Initializer::~Initializer()
 	delete m_parser;
 }
 
-void Initializer::LoadAgents(Hub* _hub, std::set<Agent*>& _agents, 
+void Initializer::LoadAgents(smartCampus::IHubAPI* _hubAPI, std::set<Agent*>& _agents, 
 			const std::string& _configPath, const std::string& _soPath)
 {
 	m_agentFactory->SetPath(_soPath);
@@ -36,7 +36,7 @@ void Initializer::LoadAgents(Hub* _hub, std::set<Agent*>& _agents,
 	{
 		try
 		{
-			agent = m_agentFactory->CreateAgent(data, soName, _hub);
+			agent = m_agentFactory->CreateAgent(data, soName, _hubAPI);
 			_agents.insert(agent);
 		}
 		catch(const exception& _err)
