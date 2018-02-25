@@ -21,6 +21,7 @@ public:
 	virtual bool Unsubscribe(Agent* _agent); //no throw return false on failure
 	virtual bool Unsubscribe(Agent* _agent, const std::string& _section); //no throw return false on failure
 	virtual void SendEvent(const Event _event);
+	virtual void SendEvent(const Event _event, const std::string& _sectionName);
 
 private:
 	EventDispatcherPtr AddDispatcher(const std::string& _section);

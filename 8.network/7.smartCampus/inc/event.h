@@ -4,9 +4,10 @@
 #include <pthread.h>
 #include <string>
 
+#include "eventImp.h"
+
 using namespace std;
 
-class EventImp;
 class Payload;
 
 class Event
@@ -20,6 +21,8 @@ public:
 	const EventImp* GetEventImp() const;
 	const EventImp& operator*() const;
 	const EventImp* operator->() const;
+	EventImp& operator*();
+	EventImp* operator->();
 
 private:
 	void CopyEvent(const Event& _event);
@@ -33,6 +36,26 @@ private:
 };
 
 inline const EventImp* Event::GetEventImp() const
+{
+	return m_eventImp;
+}
+
+inline const EventImp& Event::operator*() const
+{
+	return *m_eventImp;
+}
+
+inline const EventImp* Event::operator->() const
+{
+	return m_eventImp;
+}
+
+inline EventImp& Event::operator*()
+{
+	return *m_eventImp;
+}
+
+inline EventImp* Event::operator->()
 {
 	return m_eventImp;
 }

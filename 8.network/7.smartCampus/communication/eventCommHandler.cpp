@@ -22,7 +22,7 @@ netcpp::EventStatus EventCommHandler::HandleEvent(netcpp::SocketPtr _socket)
 	{
 		ProtocolMsg msg = socket->Recv();
 		Event event = m_factoryDispatcher.CreateEvent(msg);
-		m_hub->SendEvent(event);
+		m_hub->SendEvent(event, event->m_section);
 	}
 	catch(const netcpp::BadRequest_error& _err)
 	{

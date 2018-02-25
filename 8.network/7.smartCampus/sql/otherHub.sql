@@ -1,6 +1,6 @@
-CREATE DATABASE OtherBuilding;
+CREATE DATABASE otherHub;
 
-use OtherBuilding;
+use otherHub;
 
 CREATE TABLE Info (
 				    section_name VARCHAR(256),

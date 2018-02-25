@@ -18,6 +18,7 @@ public:
 	virtual bool Unsubscribe(Agent* _agent) = 0; //no throw return false on failure
 	virtual bool Unsubscribe(Agent* _agent, const std::string& _section) = 0; //no throw return false on failure
 	virtual void SendEvent(const Event _event) = 0;
+	virtual void SendEvent(const Event _event, const std::string& _sectionName) = 0;
 	
 };
 

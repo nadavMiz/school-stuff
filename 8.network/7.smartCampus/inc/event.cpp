@@ -74,13 +74,3 @@ void Event::DecreaseCopy()
 	}
 }
 
-const EventImp& Event::operator*() const
-{
-	return *m_eventImp;
-}
-
-const EventImp* Event::operator->() const
-{
-	return m_eventImp;
-}
-

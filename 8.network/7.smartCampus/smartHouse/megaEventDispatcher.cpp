@@ -60,4 +60,15 @@ void MegaEventDispatcher::SendEvent(const Event _event)
 	m_mainDispatcher->SendEvent(_event);
 }
 
+void MegaEventDispatcher::SendEvent(const Event _event, const std::string& _sectionName)
+{
+	std::map<std::string, EventDispatcherPtr>::iterator dispatcherItr = m_dispatchers.find(_sectionName);
+	if(m_dispatchers.end() == dispatcherItr)
+	{
+		throw std::runtime_error("section not found");
+	}
+	
+	dispatcherItr->second->SendEvent(_event);
+}
+
 }

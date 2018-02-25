@@ -7,7 +7,7 @@ SmartHouse::SmartHouse(const std::string& _configPath, const std::string& _soPat
 	m_soPath(_soPath)
 ,	m_configPath(_configPath)
 ,	m_initializer(new Initializer(_logPath))
-,	m_hub(new smartCampus::HubImp)
+,	m_hub(new smartCampus::HubImp(_configPath))
 ,	m_communicator(m_hub.get(), _configPath)
 {
 	m_hub->ConnectCommunicator(&m_communicator);

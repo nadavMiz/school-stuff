@@ -6,8 +6,10 @@
 namespace smartCampus
 {
 	
-HubImp::HubImp():
-	m_dispatcher(new MegaEventDispatcher){}
+HubImp::HubImp(const std::string& _sectionName):
+	m_dispatcher(new MegaEventDispatcher)
+,	m_sectionName(_sectionName)	
+{}
 	
 void HubImp::Subscribe(Agent* _agent, const smartCampus::Query& _query)
 {
@@ -49,9 +51,17 @@ bool HubImp::Unsubscribe(Agent* _agent, const smartCampus::Query& _query, const 
 	return m_dispatcher->Unsubscribe(_agent, _sectionName);
 }
 
-void HubImp::SendEvent(const Event _event)
+void HubImp::SendEvent(Event _event)
 {
+	//TODO better header filler
+	_event->m_section = m_sectionName;
+	
 	m_dispatcher->SendEvent(_event);
+}
+	
+void HubImp::SendEvent(Event _event, const std::string& _sectionName)
+{	
+	m_dispatcher->SendEvent(_event, _sectionName);
 }
 	
 }

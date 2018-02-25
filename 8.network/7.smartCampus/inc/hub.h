@@ -21,7 +21,8 @@ public:
 	virtual void Subscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName) = 0;
 	virtual bool Unsubscribe(Agent* _agent) = 0; //no throw
 	virtual bool Unsubscribe(Agent* _agent, const smartCampus::Query& _query, const std::string& _sectionName) = 0; //no throw
-	virtual void SendEvent(const Event _event) = 0;
+	virtual void SendEvent(Event _event) = 0;
+	virtual void SendEvent(Event _event, const std::string& _sectionName) = 0;
 	void ConnectCommunicator(smartCampus::Communicator* _communicator){m_communicator = _communicator;}
 	
 protected:
