@@ -15,12 +15,12 @@ struct Query
 	std::string m_floor;
 	std::string m_section;
 	
-	inline bool operator==(const Query& _query);
+	inline bool operator==(const Query& _query) const;
 };
 
 std::ostream& operator<<(std::ostream& _os, const Query& _query);
 
-inline bool Query::operator==(const Query& _query)
+inline bool Query::operator==(const Query& _query) const
 {
 	return m_topic == _query.m_topic && m_room == _query.m_room && m_floor == _query.m_floor;
 }

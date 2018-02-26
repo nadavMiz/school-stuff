@@ -1,0 +1,20 @@
+sprinkler.o: sprinkler.cpp inc/sprinkler.h ../inc/agent.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h ../inc/hub.h ../inc/query.h \
+ ../inc/intEvent.h ../inc/nlog.h ../inc/query.h
+guard1.o: guard1.cpp ../inc/guard1.h
+nadavElectric.o: nadavElectric.cpp inc/hvac.h ../inc/agent.h \
+ ../inc/event.h ../inc/eventImp.h ../inc/payload.h inc/sprinkler.h \
+ inc/fireSensor.h ../inc/event.h inc/signalFireSensor.h \
+ inc/interhubSprinkler.h inc/sprinkler.h ../inc/hub.h ../inc/query.h
+fireSensor.o: fireSensor.cpp ../inc/agent.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h inc/fireSensor.h ../inc/event.h \
+ ../inc/intEvent.h ../inc/hub.h ../inc/query.h ../inc/nlog.h
+tmpSensor.o: tmpSensor.cpp ../inc/hub.h ../inc/query.h inc/tmpSensor.h \
+ ../inc/agent.h ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
+ ../inc/agentData.h ../inc/nlog.h ../inc/intEvent.h
+hvac.o: hvac.cpp inc/hvac.h ../inc/agent.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h ../inc/event.h ../inc/intEvent.h \
+ ../inc/hub.h ../inc/query.h ../inc/agentData.h ../inc/nlog.h
+signalfireSensor.o: signalfireSensor.cpp ../inc/agent.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h inc/signalFireSensor.h \
+ ../inc/intEvent.h ../inc/hub.h ../inc/query.h ../inc/nlog.h
