@@ -25,7 +25,7 @@ NetworkAgent::NetworkAgentData::NetworkAgentData()
 	m_agentData.m_room = "0";
 	m_agentData.m_floor = 0;
 	m_agentData.m_config = "";
-	m_agentData.m_log = NlogFactory::GetNlogFactory().GetLog("network agent");
+	m_agentData.m_log = NlogFactory::GetNlogFactory().GetLog("networkAgent.log");
 }
 
 NetworkAgent::NetworkAgent(ClientSocketPtr _socket, Hub* _hub):
