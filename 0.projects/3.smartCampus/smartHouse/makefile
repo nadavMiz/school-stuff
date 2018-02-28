@@ -2,10 +2,10 @@
 
 CC = g++
 #SFLAGS = -g -shared -Wl,-soname,
-CXXFLAGS = -g -Wall -ansi -pedantic -fPIC
-LDFLAGS = -g -pthread -ldl
+CXXFLAGS = -g -Wall -ansi -pedantic -std=c++11
+LDFLAGS = -g -pthread -ldl -lmysqlcppconn
 # Directory structure
-INC_DIR = -Iinc/ -I../inc/
+INC_DIR = -I../common/ -I../communication -I../communication/server
 CXXFLAGS += $(INC_DIR)
 #LIB_DIR = ../../../lib
 #LDFLAGS += -L$(LIB_DIR)
@@ -14,6 +14,12 @@ CXXFLAGS += $(INC_DIR)
 # all contents of current directory
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
+COMMOBJ = $(wildcard ../communication/*.o)
+OBJS += $(patsubst %.o,%.o,$(COMMOBJ))
+SERVEROBJ = $(wildcard ../communication/server/*.o)
+OBJS += $(patsubst %.o,%.o,$(SERVEROBJ))
+ALLOBJ = $(wildcard ../common/*.o)
+OBJS += $(patsubst %.o,%.o,$(ALLOBJ))
 # Target and sources
 TARGET = smartHouse.out
 #LIB_SRCS = ../communication/comm.c
@@ -22,10 +28,7 @@ TARGET = smartHouse.out
 all: $(TARGET)
 
 $(TARGET): $(OBJS) $(LIB_OBJS)
-	g++ -shared hvac.o fireSensor.o sprinkler.o nadavElectric.o ../inc/agent.o guard.o ../inc/event.o ../inc/nlog.o signalfireSensor.o ../inc/query.o -o nadavElectric.so
-
-	g++ -shared tmpSensor.o ../inc/agent.o guard.o ../inc/event.o ../inc/nlog.o -o nadavSensors.so
-
+	$(CC) -I$(INC_DIR)-g $(CXXFLAGS) $(OBJS) -o $(TARGET) $(LDFLAGS)
 
 include depends
 

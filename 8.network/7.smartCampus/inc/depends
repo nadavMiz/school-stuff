@@ -1,8 +1,0 @@
-sqlController.o: sqlController.cpp sqlController.h
-nlogFactory.o: nlogFactory.cpp nlogFactory.h nlog.h
-guard.o: guard.cpp guard.h
-nlog.o: nlog.cpp nlog.h guard.h
-agent.o: agent.cpp agent.h event.h eventImp.h payload.h agentData.h \
- nlog.h
-event.o: event.cpp event.h eventImp.h payload.h
-query.o: query.cpp query.h

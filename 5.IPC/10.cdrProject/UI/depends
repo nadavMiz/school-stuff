@@ -1,5 +1,0 @@
-uiMain.o: uiMain.c ../inc/communication.h ../inc/controller.h \
- ../inc/retriver.h ../inc/HashMap.h
-controller.o: controller.c ../inc/controller.h ../inc/retriver.h \
- ../inc/HashMap.h ../inc/communication.h ../inc/zlog4c.h ../inc/config.h
-communication.o: communication.c ../inc/communication.h

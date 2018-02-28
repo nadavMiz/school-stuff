@@ -1,7 +1,7 @@
 
 
 all:
-	make -C inc
+	make -C common
 	make -C communication
 	make -C smartHouse
 	make -C devices
@@ -15,7 +15,7 @@ all:
 	mv smartHouse/smartHouse.out ./ 
 	
 clean:
-	make -C inc clean
+	make -C common clean
 	make -C communication clean
 	make -C smartHouse clean
 	make -C devices clean

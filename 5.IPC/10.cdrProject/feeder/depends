@@ -1,7 +1,0 @@
-CDRparser.o: CDRparser.c ../inc/zlog4c.h ../inc/config.h \
- ../inc/CDRparser.h ../inc/zlog4c.h ../inc/communication.h \
- ../inc/communication.h
-test.o: test.c CDRparser.c ../inc/zlog4c.h ../inc/config.h \
- ../inc/CDRparser.h ../inc/zlog4c.h ../inc/communication.h \
- ../inc/communication.h
-communication.o: communication.c ../inc/communication.h

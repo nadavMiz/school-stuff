@@ -3,42 +3,31 @@
 CC = g++
 #SFLAGS = -g -shared -Wl,-soname,
 CXXFLAGS = -g -Wall -ansi -pedantic
-LDFLAGS = -g -pthread -ldl
 # Directory structure
-INC_DIR = -Iserver/ -I../inc/
-CXXFLAGS += $(INC_DIR)
-#LIB_DIR = ../../../lib
+INC_DIR = ../../common/
+CXXFLAGS += -I$(INC_DIR)
+LIB_DIR = ../../../../lib
 #LDFLAGS += -L$(LIB_DIR)
 #LIB_NAME = libfeeder.so
-#LDLIBS =-lPHash -lLinkedList
+LDLIBS = -lcNthread -pthread
 # all contents of current directory
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
-
-SERVER_TARGET = server/test.out
-NEXTOBJ = $(wildcard server/*.o)
-OBJS += $(patsubst %.o,%.o,$(NEXTOBJ))
-NEXTOBJ1 = $(wildcard ../inc/*.o)
-OBJS += $(patsubst %.o,%.o,$(NEXTOBJ1))
+#NEXTOBJ = $(wildcard ../*.o)
+#OBJS += $(patsubst %.o,%.o,$(NEXTOBJ))
 # Target and sources
 TARGET = test
 #LIB_SRCS = ../communication/comm.c
 #LIB_OBJS = $(LIB_SRCS:.c=.o)
 # Dependencies
-
-#$(CC) -I$(INC_DIR) $(CXXFLAGS) $(OBJS) -o $(TARGET) $(LDFLAGS)
-
 all: $(TARGET)
 
-$(TARGET): server.out $(OBJS) $(LIB_OBJS)
+$(TARGET): $(OBJS) $(LIB_OBJS)
 
 include depends
 
 depends:
-	$(CC) -MM $(INC_DIR) $(OBJS:.o=.cpp) > depends
-
-server.out:
-	make -C server
+	$(CC) -MM -I$(INC_DIR) $(OBJS:.o=.cpp) > depends
 
 commit: $(LIB_FILE).1.0
 
@@ -48,7 +37,6 @@ commit: $(LIB_FILE).1.0
 #   ln -sf $(LIB_NAME).1.0 $(LIB_FILE)
 #   mv $(LIB_NAME).1.0 $(LIB_DIR)/
 clean:
-	make -C server clean
 	-rm -f *.o
 	-rm -f $(TARGET)
 	-rm -f depends
