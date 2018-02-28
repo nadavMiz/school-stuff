@@ -71,14 +71,17 @@ INSERT INTO Agents(config, location_id, type_id) VALUES
 ("lower: -5 upper: 50 period: 1", 1, 1),
 ("low: 15 high: 30", 1, 3),
 ("low: 15 high: 30", 1, 3),
-("low: 15 high: 30", 1, 4),
+("", 1, 4),
 ("low: 15 high: 30", 1, 3),
 ("low: 15 high: 30", 1, 3),
-("low: 15 high: 30", 1, 4),
-("low: 15 high: 30", 1, 5),
-("low: 15 high: 30", 1, 4);
+("", 1, 4),
+("", 1, 5),
+("", 1, 4),
+("", 1, 2);
 
 INSERT INTO Info(section_name, ip, msg_port, registration_port) VALUES
 ("mainHub", "127.0.0.1", 2004, 2003);
 
 SELECT * FROM SmartBuilding.AgentType;
+
+INSERT INTO Agents(config, location_id, type_id) VALUES ("", 1, 2);

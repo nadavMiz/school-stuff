@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "sprinkler.h"
 #include "hub.h"
 #include "intEvent.h"
@@ -22,7 +24,7 @@ bool Sprinkler::IsRelevantEvent(const Event& _event) const
 void Sprinkler::ReciveEvent(const Event& _event)
 {
 	int type = ((IntEvent*)_event.GetEventImp())->GetData();
-
+	
 	if(0 == type && m_isActive)
 	{
 		m_isActive = false;

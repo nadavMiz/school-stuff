@@ -1,4 +1,4 @@
-#include "guard1.h"
+#include "guard.h"
 
 Guard::Guard(const pthread_mutex_t* _mutex)
 {

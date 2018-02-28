@@ -22,9 +22,9 @@ TARGET = smartHouse.out
 all: $(TARGET)
 
 $(TARGET): $(OBJS) $(LIB_OBJS)
-	g++ -shared hvac.o fireSensor.o sprinkler.o nadavElectric.o ../inc/agent.o guard1.o ../inc/event.o ../inc/nlog.o signalfireSensor.o ../inc/query.o -o nadavElectric.so
+	g++ -shared hvac.o fireSensor.o sprinkler.o nadavElectric.o ../inc/agent.o guard.o ../inc/event.o ../inc/nlog.o signalfireSensor.o ../inc/query.o -o nadavElectric.so
 
-	g++ -shared tmpSensor.o ../inc/agent.o guard1.o ../inc/event.o ../inc/nlog.o -o nadavSensors.so
+	g++ -shared tmpSensor.o ../inc/agent.o guard.o ../inc/event.o ../inc/nlog.o -o nadavSensors.so
 
 
 include depends

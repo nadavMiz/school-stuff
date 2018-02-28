@@ -17,9 +17,6 @@ dbConfigParser.o: dbConfigParser.cpp dbConfigParser.h iConfigParser.h \
 eventListner.o: eventListner.cpp eventListener.h ../inc/agent.h \
  ../inc/event.h ../inc/eventImp.h ../inc/payload.h protectedQueue.h \
  guard.h ../inc/eventImp.h ../inc/event.h
-vectorRegistrationTable.o: vectorRegistrationTable.cpp \
- vectorRegistrationTable.h registrationTable.h ../inc/agent.h \
- ../inc/event.h ../inc/eventImp.h ../inc/payload.h ../inc/query.h
 singleSectionDispatcher.o: singleSectionDispatcher.cpp ../inc/agent.h \
  ../inc/event.h ../inc/eventImp.h ../inc/payload.h ../inc/query.h \
  singleSectionDispatcher.h eventDispatcher.h ../inc/uncopyable.h \
@@ -27,10 +24,6 @@ singleSectionDispatcher.o: singleSectionDispatcher.cpp ../inc/agent.h \
  eventListener.h ../communication/communicator.h ../inc/nthread.h \
  ../inc/atomicOperations.h ../communication/sectionData.h \
  ../communication/inCommunication.h
-megaEventDispatcher.o: megaEventDispatcher.cpp megaEventDispatcher.h \
- multiSectionEventDispatcher.h eventDispatcher.h ../inc/uncopyable.h \
- ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
- singleSectionDispatcher.h protectedQueue.h guard.h
 smartHouse.o: smartHouse.cpp smartHouse.h ../inc/agent.h ../inc/event.h \
  ../inc/eventImp.h ../inc/payload.h nlogFactory.h \
  ../communication/communicator.h ../inc/uncopyable.h ../inc/nthread.h \
@@ -38,9 +31,15 @@ smartHouse.o: smartHouse.cpp smartHouse.h ../inc/agent.h ../inc/event.h \
  ../communication/inCommunication.h initializer.h hubImp.h ../inc/hub.h \
  ../inc/query.h multiSectionEventDispatcher.h eventDispatcher.h \
  ../inc/event.h ../inc/sqlController.h
-test.o: test.cpp ../inc/agent.h ../inc/event.h ../inc/eventImp.h \
- ../inc/payload.h ../inc/query.h vectorRegistrationTable.h \
- registrationTable.h
+megaEventDispatcher.o: megaEventDispatcher.cpp megaEventDispatcher.h \
+ multiSectionEventDispatcher.h eventDispatcher.h ../inc/uncopyable.h \
+ ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
+ singleSectionDispatcher.h protectedQueue.h guard.h
+main.o: main.cpp smartHouse.h ../inc/agent.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h nlogFactory.h \
+ ../communication/communicator.h ../inc/uncopyable.h ../inc/nthread.h \
+ ../inc/atomicOperations.h ../inc/query.h ../communication/sectionData.h \
+ ../communication/inCommunication.h
 iConfigParser.o: iConfigParser.cpp iConfigParser.h ../inc/uncopyable.h \
  ../inc/agentData.h ../inc/nlog.h nlogFactory.h
 registrationConnector.o: ../communication/registrationConnector.cpp \
@@ -52,11 +51,31 @@ registrationConnector.o: ../communication/registrationConnector.cpp \
  ../communication/server/socket.h ../communication/protocol.h \
  ../communication/protocolMsg.h ../communication/querySerializer.h \
  ../communication/vectorSearchTable.h ../inc/nlogFactory.h ../inc/nlog.h
+parsingFunctions.o: ../communication/parsingFunctions.cpp \
+ ../communication/parsingFunctions.h ../inc/eventImp.h ../inc/payload.h
 shmpProtocol.o: ../communication/shmpProtocol.cpp \
  ../communication/shmpProtocol.h ../communication/protocol.h \
  ../communication/protocolMsg.h ../communication/server/netExceptions.h
-parsingFunctions.o: ../communication/parsingFunctions.cpp \
- ../communication/parsingFunctions.h ../inc/eventImp.h ../inc/payload.h
+registrationListenerHandler.o: \
+ ../communication/registrationListenerHandler.cpp \
+ ../communication/registrationListenerHandler.h \
+ ../communication/server/ihandler.h ../communication/server/serverEnums.h \
+ ../communication/server/socket.h ../communication/server/socket_t.h \
+ ../communication/server/server.h ../communication/server/ihandler.h \
+ ../communication/server/ireactor.h ../communication/server/iDispatcher.h \
+ ../communication/registrationHandler.h ../inc/hub.h ../inc/query.h \
+ ../communication/networkAgent.h ../inc/agent.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h ../communication/protocolCommSocket.h \
+ ../communication/server/socket.h ../communication/server/commSocket.h \
+ ../communication/protocol.h ../communication/protocolMsg.h \
+ ../inc/agentData.h ../inc/nlog.h ../communication/isearchTable.h \
+ ../inc/uncopyable.h ../inc/query.h ../communication/eventSerializer.h \
+ ../inc/event.h ../inc/eventImp.h ../communication/registrarConector.h \
+ ../communication/sectionData.h ../inc/nlog.h \
+ ../communication/protocolListenerSocket.h \
+ ../communication/server/listenSocket.h \
+ ../communication/server/serverSocket.h \
+ ../communication/server/commSocket.h
 registrationHandler.o: ../communication/registrationHandler.cpp \
  ../communication/registrationHandler.h ../inc/hub.h ../inc/query.h \
  ../communication/server/ihandler.h ../communication/server/serverEnums.h \
@@ -118,34 +137,24 @@ eventFactoryDispatcher.o: ../communication/eventFactoryDispatcher.cpp \
 vectorSearchTable.o: ../communication/vectorSearchTable.cpp \
  ../communication/vectorSearchTable.h ../communication/isearchTable.h \
  ../inc/uncopyable.h ../inc/query.h
-registrationListenerHandler.o: \
- ../communication/registrationListenerHandler.cpp \
- ../communication/registrationListenerHandler.h \
- ../communication/server/ihandler.h ../communication/server/serverEnums.h \
- ../communication/server/socket.h ../communication/server/socket_t.h \
- ../communication/server/server.h ../communication/server/ihandler.h \
- ../communication/server/ireactor.h ../communication/server/iDispatcher.h \
- ../communication/registrationHandler.h ../inc/hub.h ../inc/query.h \
- ../communication/networkAgent.h ../inc/agent.h ../inc/event.h \
- ../inc/eventImp.h ../inc/payload.h ../communication/protocolCommSocket.h \
- ../communication/server/socket.h ../communication/server/commSocket.h \
- ../communication/protocol.h ../communication/protocolMsg.h \
- ../inc/agentData.h ../inc/nlog.h ../communication/isearchTable.h \
- ../inc/uncopyable.h ../inc/query.h ../communication/eventSerializer.h \
- ../inc/event.h ../inc/eventImp.h ../communication/registrarConector.h \
- ../communication/sectionData.h ../inc/nlog.h \
- ../communication/protocolListenerSocket.h \
- ../communication/server/listenSocket.h \
- ../communication/server/serverSocket.h \
- ../communication/server/commSocket.h
-intEventFactory.o: ../communication/intEventFactory.cpp \
- ../communication/intEventFactory.h ../communication/ieventFactory.h \
- ../inc/uncopyable.h ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
- ../communication/protocolMsg.h ../inc/intEvent.h
 defaultEventFactory.o: ../communication/defaultEventFactory.cpp \
  ../communication/defaultEventFactory.h ../communication/ieventFactory.h \
  ../inc/uncopyable.h ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
  ../communication/protocolMsg.h ../inc/defaultEvent.h
+eventCommHandler.o: ../communication/eventCommHandler.cpp \
+ ../communication/eventCommHandler.h ../communication/server/ihandler.h \
+ ../communication/server/serverEnums.h ../communication/server/socket.h \
+ ../communication/server/socket_t.h \
+ ../communication/eventFactoryDispatcher.h \
+ ../communication/ieventFactory.h ../inc/uncopyable.h ../inc/event.h \
+ ../inc/eventImp.h ../inc/payload.h ../communication/protocolMsg.h \
+ ../inc/hub.h ../inc/query.h ../communication/protocolCommSocket.h \
+ ../communication/server/socket.h ../communication/server/commSocket.h \
+ ../communication/protocol.h ../communication/server/netExceptions.h
+intEventFactory.o: ../communication/intEventFactory.cpp \
+ ../communication/intEventFactory.h ../communication/ieventFactory.h \
+ ../inc/uncopyable.h ../inc/event.h ../inc/eventImp.h ../inc/payload.h \
+ ../communication/protocolMsg.h ../inc/intEvent.h
 querySerializer.o: ../communication/querySerializer.cpp \
  ../communication/querySerializer.h ../communication/parsingFunctions.h \
  ../inc/eventImp.h ../inc/payload.h ../inc/query.h \
@@ -177,16 +186,6 @@ inCommunication.o: ../communication/inCommunication.cpp \
  ../communication/dbSmartBuildingInformation.h \
  ../communication/iSmartBuildingInformation.h ../inc/nlogFactory.h \
  ../inc/sqlController.h
-eventCommHandler.o: ../communication/eventCommHandler.cpp \
- ../communication/eventCommHandler.h ../communication/server/ihandler.h \
- ../communication/server/serverEnums.h ../communication/server/socket.h \
- ../communication/server/socket_t.h \
- ../communication/eventFactoryDispatcher.h \
- ../communication/ieventFactory.h ../inc/uncopyable.h ../inc/event.h \
- ../inc/eventImp.h ../inc/payload.h ../communication/protocolMsg.h \
- ../inc/hub.h ../inc/query.h ../communication/protocolCommSocket.h \
- ../communication/server/socket.h ../communication/server/commSocket.h \
- ../communication/protocol.h ../communication/server/netExceptions.h
 eventSerializer.o: ../communication/eventSerializer.cpp \
  ../communication/eventSerializer.h ../inc/event.h ../inc/eventImp.h \
  ../inc/payload.h ../communication/protocolMsg.h ../inc/eventImp.h \
@@ -218,6 +217,11 @@ dbSmartBuildingInformation.o: \
  ../communication/iSmartBuildingInformation.h ../inc/uncopyable.h \
  ../communication/sectionData.h ../inc/nlogFactory.h ../inc/nlog.h \
  ../inc/sqlController.h
+listenSocket.o: ../communication/server/listenSocket.cpp \
+ ../communication/server/listenSocket.h ../communication/server/socket.h \
+ ../communication/server/socket_t.h \
+ ../communication/server/serverSocket.h \
+ ../communication/server/commSocket.h
 selectSet.o: ../communication/server/selectSet.cpp \
  ../communication/server/selectSet.h ../communication/server/timeValue.h \
  ../communication/server/timeValueOperations.h \
@@ -243,17 +247,6 @@ reactorImp.o: ../communication/server/reactorImp.cpp \
  ../communication/server/selectSet.h ../communication/server/timeValue.h \
  ../communication/server/timeValueOperations.h ../inc/uncopyable.h \
  ../communication/server/iDispatcher.h
-dispatcherImp.o: ../communication/server/dispatcherImp.cpp \
- ../communication/server/dispatcherImp.h \
- ../communication/server/iDispatcher.h \
- ../communication/server/serverEnums.h ../communication/server/ihandler.h \
- ../communication/server/socket.h ../communication/server/socket_t.h \
- ../communication/server/netExceptions.h \
- ../communication/server/ireactor.h
-clientSocket.o: ../communication/server/clientSocket.cpp \
- ../communication/server/clientSocket.h \
- ../communication/server/commSocket.h ../communication/server/socket.h \
- ../communication/server/socket_t.h
 nasterSocketHandler.o: ../communication/server/nasterSocketHandler.cpp \
  ../communication/server/masterSocketHandler.h \
  ../communication/server/ihandler.h ../communication/server/serverEnums.h \
@@ -262,23 +255,29 @@ nasterSocketHandler.o: ../communication/server/nasterSocketHandler.cpp \
  ../communication/server/listenSocket.h \
  ../communication/server/serverSocket.h \
  ../communication/server/commSocket.h
+clientSocket.o: ../communication/server/clientSocket.cpp \
+ ../communication/server/clientSocket.h \
+ ../communication/server/commSocket.h ../communication/server/socket.h \
+ ../communication/server/socket_t.h
+dispatcherImp.o: ../communication/server/dispatcherImp.cpp \
+ ../communication/server/dispatcherImp.h \
+ ../communication/server/iDispatcher.h \
+ ../communication/server/serverEnums.h ../communication/server/ihandler.h \
+ ../communication/server/socket.h ../communication/server/socket_t.h \
+ ../communication/server/netExceptions.h \
+ ../communication/server/ireactor.h
 commSocket.o: ../communication/server/commSocket.cpp \
  ../communication/server/commSocket.h ../communication/server/socket.h \
  ../communication/server/socket_t.h \
  ../communication/server/netExceptions.h
 atomicOperations.o: ../communication/server/atomicOperations.cpp \
  ../communication/server/atomicOperations.h
-listenSocket.o: ../communication/server/listenSocket.cpp \
- ../communication/server/listenSocket.h ../communication/server/socket.h \
- ../communication/server/socket_t.h \
- ../communication/server/serverSocket.h \
- ../communication/server/commSocket.h
 sqlController.o: ../inc/sqlController.cpp ../inc/sqlController.h
-nlog.o: ../inc/nlog.cpp ../inc/nlog.h ../inc/guard1.h
+nlog.o: ../inc/nlog.cpp ../inc/nlog.h ../inc/guard.h
+guard.o: ../inc/guard.cpp ../inc/guard.h
 event.o: ../inc/event.cpp ../inc/event.h ../inc/eventImp.h \
  ../inc/payload.h
 query.o: ../inc/query.cpp ../inc/query.h
-guard.o: ../inc/guard.cpp ../inc/guard1.h
 nlogFactory.o: ../inc/nlogFactory.cpp ../inc/nlogFactory.h ../inc/nlog.h
 agent.o: ../inc/agent.cpp ../inc/agent.h ../inc/event.h ../inc/eventImp.h \
  ../inc/payload.h ../inc/agentData.h ../inc/nlog.h

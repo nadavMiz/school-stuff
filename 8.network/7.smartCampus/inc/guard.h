@@ -1,26 +1,19 @@
-#ifndef GUARD_H
-#define GUARD_H
+#ifndef __Guard_H__
+#define __Guard_H__
 
-#include "Nmutex.h"
-
-namespace advcpp
-{
+#include <pthread.h>
+#include <exception>
 
 class Guard
 {
-public:
-    Guard(Nmutex& _mutex);
-    ~Guard ();
+	public:
+		Guard(const pthread_mutex_t* _mutex);
+		virtual ~Guard();
 
-private:
-    /* data */
-    Nmutex& m_mutex;
-    
-private:
-    Guard(const Guard&);
-    Guard& operator=(const Guard&);
+	private:
+		/* data */
+		pthread_mutex_t* m_mutex;
 };
 
-}
-#endif /* GUARD_H */
+#endif /* __Guard_H__ */
 

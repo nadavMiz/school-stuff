@@ -6,7 +6,7 @@
 #include <string>
 
 #include "nlog.h"
-#include "guard1.h"
+#include "guard.h"
 
 Nlog::Nlog(const std::string& _path)
 {

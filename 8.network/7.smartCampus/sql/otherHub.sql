@@ -68,10 +68,10 @@ INSERT INTO Location(building, floor, room) VALUES
 ("other hub", 5, "6");
 
 INSERT INTO Agents(config, location_id, type_id) VALUES
-#("lower: -5 upper: 50 period: 1", 1, 1),
-("low: 15 high: 30", 1, 2);
+("lower: -5 upper: 50 period: 1", 1, 1),
+("", 1, 2);
 
 INSERT INTO Info(section_name, ip, msg_port, registration_port) VALUES
 ("otherHub", "127.0.0.1", 5000, 5001);
 
-SELECT * FROM SmartBuilding.AgentType;
+SELECT * FROM otherHub.AgentType;

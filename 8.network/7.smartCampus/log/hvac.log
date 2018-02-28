@@ -1,20 +1,28 @@
-21::50::10 2: tmp is: 4. turning on HVAC
-21::50::10 5: tmp is: 4. turning on HVAC
-21::50::10 6: tmp is: 4. turning on HVAC
-21::50::10 3: tmp is: 4. turning on HVAC
-21::50::11 3: tmp is: 25. turning off HVAC
-21::50::11 6: tmp is: 25. turning off HVAC
-21::50::11 5: tmp is: 25. turning off HVAC
-21::50::11 2: tmp is: 25. turning off HVAC
-21::50::13 2: tmp is: 32. turning on HVAC
-21::50::13 3: tmp is: 32. turning on HVAC
-21::50::13 6: tmp is: 32. turning on HVAC
-21::50::13 5: tmp is: 32. turning on HVAC
-21::50::17 5: tmp is: 17. turning off HVAC
-21::50::17 3: tmp is: 17. turning off HVAC
-21::50::17 6: tmp is: 17. turning off HVAC
-21::50::17 2: tmp is: 17. turning off HVAC
-21::50::18 5: tmp is: 4. turning on HVAC
-21::50::18 3: tmp is: 4. turning on HVAC
-21::50::18 6: tmp is: 4. turning on HVAC
-21::50::18 2: tmp is: 4. turning on HVAC
+19::18::36 3: tmp is: 6. turning on HVAC
+19::18::36 2: tmp is: 6. turning on HVAC
+19::18::36 5: tmp is: 6. turning on HVAC
+19::18::36 6: tmp is: 6. turning on HVAC
+19::18::38 5: fire detected. turning off HVAC
+19::18::38 3: fire detected. turning off HVAC
+19::18::38 6: fire detected. turning off HVAC
+19::18::38 2: fire detected. turning off HVAC
+19::18::42 3: tmp is: -5. turning on HVAC
+19::18::42 6: tmp is: -5. turning on HVAC
+19::18::42 2: tmp is: -5. turning on HVAC
+19::18::42 5: tmp is: -5. turning on HVAC
+19::18::44 6: fire detected. turning off HVAC
+19::18::44 5: fire detected. turning off HVAC
+19::18::44 3: fire detected. turning off HVAC
+19::18::44 2: fire detected. turning off HVAC
+19::18::48 6: tmp is: 4. turning on HVAC
+19::18::48 5: tmp is: 4. turning on HVAC
+19::18::48 2: tmp is: 4. turning on HVAC
+19::18::48 3: tmp is: 4. turning on HVAC
+19::18::50 3: tmp is: 24. turning off HVAC
+19::18::50 6: tmp is: 24. turning off HVAC
+19::18::50 2: tmp is: 24. turning off HVAC
+19::18::50 5: tmp is: 24. turning off HVAC
+19::18::50 3: fire detected. turning off HVAC
+19::18::50 6: fire detected. turning off HVAC
+19::18::50 5: fire detected. turning off HVAC
+19::18::50 2: fire detected. turning off HVAC

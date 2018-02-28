@@ -1,1 +1,2 @@
-21::50::20 system: cought broken_pipe at RegistrationHandler::HandleEvent: connection closed
+19::18::54 RegistrationConnector::Unregister: invalid section name in query: topic: ALLroom: ALLfloorALLsection: ALL
+

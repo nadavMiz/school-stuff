@@ -9,6 +9,8 @@ class InterHubSprinkler: public Sprinkler
 public:
 	InterHubSprinkler(const AgentData& _data, Hub* _hub): Sprinkler(_data, _hub)
 	{
+		m_hub->Unsubscribe(this);
+		
 		smartCampus::Query query;
 		query.m_topic = "fire";
 		query.m_floor = "5";
@@ -16,6 +18,11 @@ public:
 		
 		
 		_hub->Subscribe(this, query, "otherHub");
+	}
+	
+	~InterHubSprinkler()
+	{	
+		m_hub->Unsubscribe(this, smartCampus::Query(), "otherHub");
 	}
 
 private:

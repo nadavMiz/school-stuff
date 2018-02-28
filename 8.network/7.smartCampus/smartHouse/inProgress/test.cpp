@@ -4,6 +4,7 @@
 #include "agent.h"
 #include "query.h"
 #include "vectorRegistrationTable.h"
+#include "event.h"
 
 using namespace smartCampus;
 
@@ -13,16 +14,16 @@ int main()
 	Agent* b = (Agent*)0;
 	Query q1, q2;
 	q1.m_topic = "fire";
-	q1.m_room = "fire";
-	q2.m_topic = "fire";
+	q2.m_topic = "water";
 	
 	
-	VectorRegistrationTable regist;
+	TreeRegistrationTable regist;
 	
 	regist.Insert(a,q1);
-	regist.Insert(b,q2);
-	
-	std::vector<Agent*> vec = regist.Find(q2);
+	regist.Insert(a,q2);
+	Event event(new EventImp);
+	event->m_topic = "reek";
+	std::vector<Agent*> vec = regist.Find(event);
 	
 	std::cout << vec.size() << std::endl;
 	
