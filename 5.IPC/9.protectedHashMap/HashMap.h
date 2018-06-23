@@ -12,7 +12,7 @@
  *  size of allocated table will be the nearest prime number greater than requested capacity.
  *  Lists used for chaining will be allocated eagerly.
  *
- *  @author Nadav Mizrahi  (MuhammadZ@experis.co.il)
+ *  @author Nadav Mizrahi  (nadav.mizrahi16@gmail.com)
  * 
  *  @bug No known bugs! 
  */
